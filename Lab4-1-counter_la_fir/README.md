@@ -5,14 +5,14 @@
 ```sh
 $ cd lab-exmem-fir/testbench/counter_la_fir
 ```
-### Then start to run simulation
+### Start the simulation
 ```sh
 $ source run_clean
 $ source run_sim
 ```
 After this step, we can get `counter_la_fir.hex`,
 and dump `counter_la_fir.vcd`.
-We can use GTKWave to see the waveform of the result
+We can see the waveform of the result by using GTKwave:
 ```sh
 $ gtkwave counter_la_fir.vcd
 ```
