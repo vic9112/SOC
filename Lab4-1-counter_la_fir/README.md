@@ -6,7 +6,7 @@ $ cd lab-exmem-fir/testbench/counter_la_fir
 $ ./run_clean
 $ ./run_sim
 ```
-# Start xsim
+## Start xsim
 ```sh
 $ make
 ```
