@@ -7,8 +7,8 @@ $ cd lab-exmem-fir/testbench/counter_la_fir
 ```
 ### Then start to run simulation
 ```sh
-$ ./run_clean
-$ ./run_sim
+$ ./run_clean ($ source run_clean)
+$ ./run_sim   ($ source run_sim)
 ```
 After this step, we can get `counter_la_fir.hex`,
 and dump `counter_la_fir.vcd`.
