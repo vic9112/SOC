@@ -3,7 +3,7 @@
 ## Simulation for FIR
 ### First, change the path to our testbench
 ```sh
-$ cd lab-exmem-fir/testbench/counter_la_fir
+$ cd lab-exmem_fir/testbench/counter_la_fir
 ```
 ### Start the simulation
 ```sh
