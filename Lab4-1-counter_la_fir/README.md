@@ -10,9 +10,9 @@ $ cd lab-exmem-fir/testbench/counter_la_fir
 $ source run_clean
 $ source run_sim
 ```
-After this step, we can get `counter_la_fir.hex`,
+- After this step, we can get `counter_la_fir.hex`,
 and dump `counter_la_fir.vcd`.
-We can see the waveform of the result by using GTKwave:
+- We can see the waveform of the result by using GTKwave:
 ```sh
 $ gtkwave counter_la_fir.vcd
 ```
@@ -22,4 +22,4 @@ $ gtkwave counter_la_fir.vcd
 ```sh
 $ make
 ```
-Then the result will be in xsim.log
+- Then the result will be in xsim.log
