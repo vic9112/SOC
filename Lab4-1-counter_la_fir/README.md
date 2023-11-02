@@ -5,5 +5,9 @@
 $ cd lab-exmem-fir/testbench/counter_la_fir
 $ ./run_clean
 $ ./run_sim
+```
+# Start xsim
+```sh
 $ make
 ```
+Then the result will be in xsim.log
