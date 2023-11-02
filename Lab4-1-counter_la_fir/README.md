@@ -16,6 +16,8 @@ We can see the waveform of the result by using GTKwave:
 ```sh
 $ gtkwave counter_la_fir.vcd
 ```
+![waveform](https://github.com/vic9112/SOC/assets/137171415/427f4c89-52ce-43b2-817f-09cb9f8dc8e7)
+
 ## Start xsim
 ```sh
 $ make
