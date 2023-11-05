@@ -1,3 +1,5 @@
+[TOC]
+
 # Execute FIR code in user BRAM
 
 ## Simulation for FIR
