@@ -3,7 +3,7 @@
 - In this lab, we will write our firmware code(fir.c) and load into spiflash,
 - After this step, CPU(RISC-V) will read our FIR code in bram, which is located at user project.
 
-- We can refer to the structure of Caravel Harness Chip
+## Refer to the structure of Caravel Harness Chip:
 
 ![螢幕擷取畫面 2023-11-05 162621](https://github.com/vic9112/SOC/assets/137171415/545d9f4b-50b0-470d-abef-b15fd3851968)
 
