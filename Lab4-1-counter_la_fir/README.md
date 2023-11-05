@@ -1,7 +1,5 @@
 # Execute FIR code in user BRAM
 
-[TOC]
-
 ## Simulation for FIR
 ### First, change the path to our testbench
 ```sh
