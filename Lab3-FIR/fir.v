@@ -6,8 +6,8 @@
 `define SM_IDLE 1'b1
 `define SM_DONE 1'b0
 
-`define AP_IDLE 2'b00
-`define AP_INIT 2'b01
+`define AP_PROC 2'b00
+`define AP_IDLE 2'b01
 `define AP_DONE 2'b10
 
 module fir 
@@ -59,9 +59,9 @@ module fir
     );
     
 //----------------------- AXI-Lite -----------------------------
-    assign awready = 1'b1;
-    assign arready = ~(wvalid ^ awvalid); 
-    assign wready  = 1'b1;
+    assign awready = awvalid && wvalid;
+    assign arready = rready; 
+    assign wready  = awvalid && wvalid;
     
     reg tmp_rvalid;
     always @(posedge axis_clk) tmp_rvalid <= arvalid;
@@ -77,7 +77,7 @@ module fir
     
     always @* begin
         case (ap_state)
-            `AP_INIT:
+            `AP_IDLE:
             begin  // 0x00: bit 0: ap_start, bit 1: ap_done, bit 2: ap_idle
                 if (awaddr == 12'd0 && wdata[0] == 1 && tlast_cnt != data_length) begin
                     ap_ctrl       = 3'b001;     // ap_start
@@ -88,7 +88,7 @@ module fir
                     next_ap_state = `AP_INIT;
                 end  
             end
-            `AP_IDLE:
+            `AP_PROC:
             begin
                 if (sm_tlast) begin // finish last Y
                     ap_ctrl       = 3'b010;     // ap_done
@@ -152,7 +152,7 @@ module fir
     
 //------------------------- data_RAM signals -----------------------------
     assign data_EN = ss_tvalid;
-    assign data_WE = (ss_tready & ss_idle)? 4'b1111 : 4'b0000;  // if ss_tlast not asserted, still can write
+    assign data_WE = (ss_tready && ss_idle)? 4'b1111 : 4'b0000;  // if ss_tlast not asserted, still can write
     assign data_A  = (ap_ctrl[2] == 1 && init_addr != 6'd44)? init_addr : data_A_tmp; // data initialize before ap_start
     assign data_Di = ss_tdata;
     
@@ -321,7 +321,7 @@ module fir
     assign h_tmp = tap_Do;          // h[i]
     assign x_tmp = x_sel;           // x[t-i]
     assign m_tmp = h * x;           // h[i] * x[t-i]
-    assign y_tmp = (y_cnt == 4'd0)? m : m + y;  
+    assign y_tmp = m + y;           // y = h[i] * x[t-i]
             
     // Operation Pipeline
     always @(posedge axis_clk or negedge axis_rst_n) begin
@@ -335,7 +335,10 @@ module fir
             h <= h_tmp;
             x <= x_tmp;
             m <= m_tmp;
-            y <= y_tmp;
+            if (y_cnt == 0)
+                y <= 0;
+            else
+                y <= y_tmp;
         end
     end
     
