@@ -32,7 +32,7 @@ int* __attribute__ ( ( section ( ".mprjram" ) ) ) fir() {
 	// ap_start
 	wb_write(fir_ap_ctrl, 0x1);
 
-	uint8_t register t = 0;
+	uint8_t register t = 0; // if we use signed integer here, may increase the latency
 	uint8_t register x = 0;
 	int8_t  register y = 0;
 	while (t < data_length) {
