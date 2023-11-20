@@ -343,7 +343,7 @@ module fir
     end
     
 //---------------------- Address Generator ----------------------
-    wire [(pADDR_WIDTH-1):0] tap_AR;    // address which will send into tap_RAM
+    wire [5:0] tap_AR;    // address which will send into tap_RAM
     reg  [3:0] k;
     wire [3:0] k_tmp;
     
@@ -357,7 +357,7 @@ module fir
     end
     
     // if ap_idle = 0, use value of address generator
-    assign tap_AR = (ap_ctrl[2] == 1'b0)? 12'h080 + 4*k : araddr[5:0]; // else, tb check value
+    assign tap_AR = (ap_ctrl[2] == 1'b0)? 4 * k : araddr[5:0]; // else, tb check value
     
 //-------------------- Address Generator(Data) ------------------
     // count x[t]
@@ -395,12 +395,9 @@ module fir
     
     // FF store one value, the first x is from FF.
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n) begin
-            data_ff <= 32'd0;
-        end
-        else begin
-            data_ff <= ss_tdata;
-        end
+        // no need to reset since when control active, 
+        // data/address must have valid value anyway
+        data_ff <= ss_tdata;
     end
     
 //--------------- MUX to select X from FF or data_RAM -------------
