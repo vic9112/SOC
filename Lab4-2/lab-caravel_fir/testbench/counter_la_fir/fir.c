@@ -32,18 +32,20 @@ int* __attribute__ ( ( section ( ".mprjram" ) ) ) fir() {
 	// ap_start
 	wb_write(fir_ap_ctrl, 0x1);
 
-	int8_t register t = 0;
-	int8_t register x = 0;
-	int8_t register y = 0;
+	uint8_t register t = 0;
+	uint8_t register x = 0;
+	int8_t  register y = 0;
 	while (t < data_length) {
 		// check ap_ctrl[4] (ss_tready is asserted)
 		if (wb_read(fir_ap_ctrl) == 0x10) {
-			wb_write(fir_x_in, x++); // write X into fir
+			wb_write(fir_x_in, x); // write X into fir
+			x++;
 		}
 		// check ap_ctrl[5] (sm_tvalid is asserted)
 		if (wb_read(fir_ap_ctrl) == 0x20) {
 			y = wb_read(fir_y_out);  // read Y from fir
-			outputsignal[t++] = y;
+			outputsignal[t] = y;
+			t++;
 		}
 	}
 	// let TB check the final Y by using MPRJ[31:24]
@@ -61,12 +63,14 @@ int* __attribute__ ( ( section ( ".mprjram" ) ) ) fir() {
         while (t < data_length) {
                 // check ap_ctrl[4] (ss_tready is asserted)
                 if (wb_read(fir_ap_ctrl) == 0x10) {
-                        wb_write(fir_x_in, x++); // write X into fir
+                        wb_write(fir_x_in, x); // write X into fir
+			x++;
                 }
                 // check ap_ctrl[5] (sm_tvalid is asserted)
                 if (wb_read(fir_ap_ctrl) == 0x20) {
                         y = wb_read(fir_y_out);  // read Y from fir
-                        outputsignal[t++] = y;
+                        outputsignal[t] = y;
+			t++;
                 }
         }
         // let TB check the final Y by using MPRJ[31:24]
@@ -83,12 +87,14 @@ int* __attribute__ ( ( section ( ".mprjram" ) ) ) fir() {
         while (t < data_length) {
                 // check ap_ctrl[4] (ss_tready is asserted)
                 if (wb_read(fir_ap_ctrl) == 0x10) {
-                        wb_write(fir_x_in, x++); // write X into fir
+                        wb_write(fir_x_in, x); // write X into fir
+			x++;
                 }
                 // check ap_ctrl[5] (sm_tvalid is asserted)
                 if (wb_read(fir_ap_ctrl) == 0x20) {
                         y = wb_read(fir_y_out);  // read Y from fir
-                        outputsignal[t++] = y;
+                        outputsignal[t] = y;
+			t++;
                 }
         }
         // let TB check the final Y by using MPRJ[31:24]
