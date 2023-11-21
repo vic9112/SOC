@@ -234,17 +234,6 @@ module fir
                 ss_idle = 0;
             end
         end
-        default:
-        begin
-            if (ss_tvalid) begin
-                next_ss_state = `SS_IDLE;
-                ss_idle = 1;
-            end
-            else begin
-                next_ss_state = `SS_DONE;
-                ss_idle = 0;
-            end
-        end
         endcase
     end
     
