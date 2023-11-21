@@ -6,3 +6,6 @@
 
 ## Datapath
 ![image](https://github.com/vic9112/SOC/assets/137171415/e91d231f-4467-44f7-af0b-b013cb842eaa)
+
+- Fir reviewing:
+https://hackmd.io/@vic9112/HyGQqjONa
