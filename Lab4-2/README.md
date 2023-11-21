@@ -6,11 +6,14 @@ $ cd ~/Lab4-2/lab-caravel_fir/testbench/counter_la_fir
 $ source run_clean
 $ source run_sim
 ```
-- above generate counter_la_fir.vcd, which we can use gtkwave to open it.
+- Above generate counter_la_fir.vcd
+- Then we can see the waveform by using gtkwave to open .vcd file.
 
 ```sh
 $ gtkwave counter_la_fir.vcd
 ```
+
+![screenshot_wv](https://github.com/vic9112/SOC/assets/137171415/5196340b-72e1-42eb-885c-74f703e21642)
 
 ## XSIM
 
