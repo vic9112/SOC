@@ -1,4 +1,4 @@
-# Execute FIR code in user BRAM
+# Execute firmware code in user BRAM
 
 ## Simulation for FIR
 ```sh
