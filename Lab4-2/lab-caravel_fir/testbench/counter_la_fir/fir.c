@@ -21,7 +21,6 @@ void __attribute__ ( ( section ( ".mprjram" ) ) ) initfir() {
 
 }
 
-// Referred to the source code of lab2-FIR
 int* __attribute__ ( ( section ( ".mprjram" ) ) ) fir() {
 	// initialization
 	initfir();
