@@ -20,5 +20,8 @@ $ gtkwave counter_la_fir.vcd
 ```sh
 $ make
 ```
-
 - which will generate xsim.log in current directory.
+
+![螢幕擷取畫面 2023-11-21 194643](https://github.com/vic9112/SOC/assets/137171415/ba4076ee-d9d8-4b0e-94c4-163bcd2ca741)
+
+![螢幕擷取畫面 2023-11-21 194624](https://github.com/vic9112/SOC/assets/137171415/acb7f54b-6b57-41b4-89a2-3593b8bb500f)
