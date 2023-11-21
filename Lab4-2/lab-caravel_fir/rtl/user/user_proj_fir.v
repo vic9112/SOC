@@ -104,7 +104,7 @@ module user_proj_fir #(
             end
         end
     end
-    // s_ready asserted in the next cycle
+    // ready asserted in the next cycle
     always @(posedge wb_clk_i or posedge wb_rst_i) begin
         if (wb_rst_i) begin
             wb_ready <= 1'b0;
