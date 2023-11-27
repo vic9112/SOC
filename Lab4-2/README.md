@@ -23,4 +23,5 @@ $ make
 - which will generate xsim.log in current directory.
 
 ![螢幕擷取畫面 2023-11-28 013233](https://github.com/vic9112/SOC/assets/137171415/f3bf62dd-3e35-401b-8c8b-0d0c3ef37570)
+
 ![螢幕擷取畫面 2023-11-28 013255](https://github.com/vic9112/SOC/assets/137171415/ca25dceb-722f-4b9e-9c62-7c85dfed71d4)
