@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# xsim v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Nov 27 12:31:04 2023
+# Process ID: 31700
+# Current directory: /home/ubuntu/caravel-soc_fpga-lab/lab-caravel_fir/testbench/counter_la_fir
+# Command line: xsim -mode tcl -source {xsim.dir/counter_la_fir_tb_elab/xsim_script.tcl}
+# Log file: /home/ubuntu/caravel-soc_fpga-lab/lab-caravel_fir/testbench/counter_la_fir/xsim.log
+# Journal file: /home/ubuntu/caravel-soc_fpga-lab/lab-caravel_fir/testbench/counter_la_fir/xsim.jou
+# Running On: ubuntu2004, OS: Linux, CPU Frequency: 2591.998 MHz, CPU Physical cores: 2, Host memory: 10425 MB
+#-----------------------------------------------------------
+source xsim.dir/counter_la_fir_tb_elab/xsim_script.tcl
+# xsim {counter_la_fir_tb_elab} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Reading counter_la_fir.hex
+counter_la_fir.hex loaded into memory
+Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
+----- Start transfer data length -----
+----> data length finished...
+----- Start transfer coefficient -----
+----> coefficient finished...
+----- Check the coefficient in tapRAM -----
+1 success
+2 success
+3 success
+4 success
+5 success
+6 success
+7 success
+8 success
+9 success
+10 success
+11 success
+Coefficient correct!
+-----------------------------------
+----> Start FIR Test           1
+Start latency-timer...
+Final Y = 118
+Finish processing...
+Executes in       17331 cycles
+-----------------------------------
+----> Start FIR Test           2
+Start latency-timer...
+Final Y = 118
+Finish processing...
+Executes in       17331 cycles
+-----------------------------------
+----> Start FIR Test           3
+Start latency-timer...
+Final Y = 118
+Finish processing...
+Executes in       17331 cycles
+-----------------------------------
+Total cycles:       51993
+$finish called at time : 2662462500 ps : File "/home/ubuntu/caravel-soc_fpga-lab/lab-caravel_fir/testbench/counter_la_fir/counter_la_fir_tb.v" Line 222
+run: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:12 . Memory (MB): peak = 2507.516 ; gain = 0.000 ; free physical = 946 ; free virtual = 2209
+exit
+INFO: xsimkernel Simulation Memory Usage: 125292 KB (Peak: 169092 KB), Simulation CPU Usage: 12260 ms
+INFO: [Common 17-206] Exiting xsim at Mon Nov 27 12:31:22 2023...
