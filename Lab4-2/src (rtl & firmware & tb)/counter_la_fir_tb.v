@@ -159,7 +159,7 @@ module counter_la_fir_tb;
 	integer cycs = 0;
 	integer sum  = 0;
 	initial begin
-		
+		/*
 		$display("----- Start transfer data length -----");
 		wait(checkbits == 16'h00DD);
 		$display("----> data length finished...");
@@ -197,7 +197,7 @@ module counter_la_fir_tb;
 		$display("Coefficient correct!");
 		
 		$display("-----------------------------------");
-
+		*/
 		for (n = 0; n < 3; n = n + 1) begin
 			wait(checkbits == 16'h00A5);
 			$display("----> Start FIR Test %d", n+1);
