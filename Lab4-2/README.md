@@ -12,8 +12,7 @@ $ source run_sim
 ```sh
 $ gtkwave counter_la_fir.vcd
 ```
-
-![screenshot_wv](https://github.com/vic9112/SOC/assets/137171415/5196340b-72e1-42eb-885c-74f703e21642)
+![螢幕擷取畫面 2023-12-05 225846](https://github.com/vic9112/SOC/assets/137171415/b5a41745-a4f1-41d2-9d6e-143b9792cfbe)
 
 ## XSIM
 
@@ -22,6 +21,4 @@ $ make
 ```
 - which will generate xsim.log in current directory.
 
-![螢幕擷取畫面 2023-11-28 013233](https://github.com/vic9112/SOC/assets/137171415/f3bf62dd-3e35-401b-8c8b-0d0c3ef37570)
-
-![螢幕擷取畫面 2023-11-28 013255](https://github.com/vic9112/SOC/assets/137171415/ca25dceb-722f-4b9e-9c62-7c85dfed71d4)
+![螢幕擷取畫面 2023-12-05 225941](https://github.com/vic9112/SOC/assets/137171415/c614b407-cebf-466e-a764-2d1a352980c2)
