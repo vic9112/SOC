@@ -295,7 +295,7 @@ module fir
                 y_cnt_tmp = y_cnt;
         end
         else if (y_cnt == 0) begin
-            if (sm_tvalid) // If firmware send the signal for Y output request
+            if (sm_tvalid && sm_tready) // If firmware send the signal for Y output request
                 y_cnt_tmp = 0 - 6'd14;
             else
                 y_cnt_tmp = y_cnt;
