@@ -2,7 +2,8 @@
 
 - Also can refer to Report.pdf for more details when we working in this project.
 
-## Simulation for 4 Workloads
+## Simulation for 4 Workloads (Test INTERRUPT)
+
 ```sh
 $ cd ~/Lab6-wlos/testbench/combined
 $ source run_clean
@@ -12,10 +13,12 @@ $ source run_sim
 
 ![螢幕擷取畫面 2023-12-17 215416](https://github.com/vic9112/SOC/assets/137171415/e1864ce1-7854-40eb-ba38-3dcf4979d20d)
 
-## Jupyter Notebook for PYNQ Board Simulation
+Above we can see that the INTERRUPT let us execute UART and FIR parallelly.
 
-- Since the speed of python sampling data is much slower than verilog testbench,
-- we need to add while loop on the signal we want to test.
+## Host Code (Jupyter Notebook) Simulation on PYNQ Board
+
+- Since the speed of sampling data in python is much slower than the speed of verilog testbench,
+- we need to add while loop on the signal we want to test, as following:
 
 ![螢幕擷取畫面 2023-12-17 231852](https://github.com/vic9112/SOC/assets/137171415/50079de1-6d29-4d94-a92d-854f1661ea85)
 
