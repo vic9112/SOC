@@ -1,6 +1,6 @@
 # Combine 4 Workloads and Execute on Caravel SoC
 
-- Also can refer to Report.pdf for more details when we working in this project.
+- Also can refer to Report.pdf for more details when we working on this project.
 
 ## Simulation for 4 Workloads (Test INTERRUPT)
 
