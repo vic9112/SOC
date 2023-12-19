@@ -22,3 +22,8 @@ $ make
 - which will generate xsim.log in current directory.
 
 ![螢幕擷取畫面 2023-12-06 211318](https://github.com/vic9112/SOC/assets/137171415/d282ae85-83bc-4122-8cbd-f2685cea643d)
+
+# Update
+
+- 12/19
+  Achieve 12T to process one data
