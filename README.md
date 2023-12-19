@@ -1,5 +1,5 @@
-# SOC
-NTHU Special Project - SOC 
+# SoC
+NTHU Special Project - System on Chip
 
 
 
