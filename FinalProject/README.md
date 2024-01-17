@@ -1,5 +1,9 @@
 # SOC Lab Final Project
 
+## Overview Block Diagram
+
+![螢幕擷取畫面 2024-01-17 235311](https://github.com/vic9112/SOC/assets/137171415/45c09e35-8498-4db4-a677-df463b01f60a)
+
 ---
 ## Computation System Overview
 
