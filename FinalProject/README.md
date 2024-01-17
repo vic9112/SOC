@@ -59,7 +59,7 @@ MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 
 ### Q Sort
 我們利用insert sorting的方法來插入，利用十個比較器，找出index來決定要插入的位置。
 
-![image](https://hackmd.io/_uploads/HkPL1qzKT.png =50%x) ![image](https://hackmd.io/_uploads/r1zMyqMt6.png )
+![image](https://hackmd.io/_uploads/HkPL1qzKT.png ) ![image](https://hackmd.io/_uploads/r1zMyqMt6.png )
 
 ### Arbitrary
 有優先順序的arb。
@@ -75,6 +75,7 @@ MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 
 ### Original Block Diagram
 
 - The overall diagram of SDRAM are shown below:
+
 ![螢幕擷取畫面 2024-01-16 211732](https://hackmd.io/_uploads/SyJbM-Vta.png )
 
 - The wishbone cycle will pass through SDRAM controller and store/write data from/into SDRAM. We have do some optimize since the memory size of the original source code of SDRAM is not enough.
