@@ -9,9 +9,6 @@
 
 在本次 final project 中，我們根據 Lab 4、Lab 6 的基礎，設計Arbitrary、DMA、SDRAM 與硬體加速器，希望能夠改進先前的結果。硬體加速器的部分包含之前 Lab3、4 使用的 Fir 以及新設計的 Matrix Multipication 和 Qsort 三個 module，利用三個DMA去配合它們的資料傳輸，而彼此資料的先後順序交由 Arbitrary 這個 module 去權重。而儲存instructions 和 data sets 的工作則使用 SDRAM，讓硬體不必透過 CPU 去收發資料以減少 cycle。進一步的 Prefetch 設計能在 3T 的 latency 中拿取更多的 Data，能夠再減少用於抓資料的時間。
 
-![image](https://hackmd.io/_uploads/rJ4f2cMFT.png)
-
-
 ---
 
 ## Firmware
