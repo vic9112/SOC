@@ -59,7 +59,7 @@ While our ability to make significant changes to the hardware is limited, there 
 
 - But we only get the cache deph of 16 in our Caravel SOC:
 
-![image](https://hackmd.io/_uploads/SkoA3lSFT.png =70%x)
+![image](https://hackmd.io/_uploads/SkoA3lSFT.png)
 
 - CPU has 16 instructions cache, but loop code has 17 instructions.
 
