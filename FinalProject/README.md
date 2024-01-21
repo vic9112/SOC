@@ -1,7 +1,5 @@
 # SOC Lab Final Project
 
-[TOC]
-
 ---
 
 ## Computation System Overview
