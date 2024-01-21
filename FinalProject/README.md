@@ -6,7 +6,9 @@
 
 ## Computation System Overview
 
-在本次 final project 中，我們根據 Lab 4、Lab 6 的基礎，設計Arbitrary、DMA、SDRAM 與硬體加速器，希望能夠改進先前的結果。硬體加速器的部分包含之前 Lab3、4 使用的 Fir 以及新設計的 Matrix Multipication 和 Qsort 三個 module，利用三個DMA去配合它們的資料傳輸，而彼此資料的先後順序交由 Arbitrary 這個 module 去權重。而儲存instructions 和 data sets 的工作則使用 SDRAM，讓硬體不必透過 CPU 去收發資料以減少 cycle。進一步的 Prefetch 設計能在 3T 的 latency 中拿取更多的 Data，能夠再減少用於抓資料的時間。
+In this final project, we designed Arbitrary, DMA, SDRAM, and hardware accelerators based on the foundations of Lab 4 and Lab 6, aiming to improve upon previous results. The hardware accelerator section includes three modules: Fir, Matrix Multiplication, and Qsort. Fir was previously used in Lab 3 and Lab 4. We utilize three DMAs to facilitate data transfer for these modules, and the sequencing of data between them is controlled by the Arbitrary module, which assigns weights.
+
+For storing instructions and data sets, we employ SDRAM, allowing the hardware to handle data transfer without relying on the CPU, thereby reducing cycles. Further enhancements include Prefetch design, enabling the retrieval of more data within a 3T latency, ultimately reducing the time spent fetching data.
 
 ![image](https://hackmd.io/_uploads/rJ4f2cMFT.png)
 
@@ -14,11 +16,11 @@
 ---
 
 ## Firmware
-先更改section.ids ，這是為了把需要計算的data放在SDRAM。
+First, modify the section.ids to relocate the data that needs to be computed to SDRAM.
 
- ![螢幕擷取畫面 2024-01-16 212642](https://hackmd.io/_uploads/Hyy4E-4tT.png =40%x) ![螢幕擷取畫面 2024-01-16 212631](https://hackmd.io/_uploads/HJImV-4Kp.png =50%x)
+ ![螢幕擷取畫面 2024-01-16 212642](https://hackmd.io/_uploads/Hyy4E-4tT.png) ![螢幕擷取畫面 2024-01-16 212631](https://hackmd.io/_uploads/HJImV-4Kp.png)
 
-我們的 Firmware 在這次的 final project 主要用於設定資料地址以及確認完成所有運算。A、B、C 為矩陣乘法用到的位置，X、Y 為 FIR 用到的位置，Q 為 qsort 用到的位置。
+Our firmware in this final project primarily serves to configure data addresses and confirm the completion of all computations. A, B, and C represent the positions used for matrix multiplication, while X and Y denote the positions used for FIR. Q represents the position used for qsort.
 
 ![image](https://hackmd.io/_uploads/BJavg5MFT.png)
 
@@ -26,7 +28,7 @@
 
 ![image](https://hackmd.io/_uploads/ByEbZcfFa.png)
 
-由於這三種運算是同時進行，因此我們從 waveform 判斷 FIR 是運行最慢的，因此我們設定當收到 FIR 最後的資料就回到 AB51，同時我們也可以藉由此方法來判斷我們的算完的值確實也寫入SDRAM的位置。
+Since these three computations are performed simultaneously, we determined from the waveform that FIR is the slowest operation. Therefore, we set it up to return to AB51 when we receive the final data from FIR. This approach also allows us to confirm that our computed values are indeed written to the designated positions in SDRAM.
 
 ![image](https://hackmd.io/_uploads/S1LSb9MYa.png)
 
@@ -34,38 +36,41 @@
 
 ## Hardware Accelerator
 
-在 Lab 6 中，我們利用 firmware code 在 carvel soc 上跑 fir、mm、qs，但是 cpu 運算的時間過長，因此希望透過使用硬體去加快它們的計算速度。
+In Lab 6, we utilized firmware code to run FIR, matrix multiplication (mm), and quicksort (qs) on the Carvel SoC. However, the CPU computation time was excessively long, prompting us to seek faster calculation speeds through the use of hardware acceleration.
 
 ### FIR & DMA
 
 ![image](https://hackmd.io/_uploads/SkBFPZVF6.png)
 
-Fir 的設計沿用在 Lab3、4 的架構，並加上 Y_buffer 讓 DMA 到 Buffer 去接收計算完的 data。當 Fir 計算完成時會送資料到 y_buffer 並送出 full 的訊號讓 DMA 接收資料，同時也等待 DMA 送新的 X 進來。
+The design of FIR follows the architecture used in Lab 3 and Lab 4, with the addition of a Y_buffer to allow DMA to receive computed data. When FIR completes its calculation, it sends data to the Y_buffer and sends a signal indicating it is full, allowing DMA to receive the data. At the same time, it waits for DMA to send new X data.
 
 ![image](https://hackmd.io/_uploads/HJ2skYGF6.png)
 
-DMA_fir 的功能涵蓋先前 Lab 4 的 decoder 與 DMA 本身，其運作圍繞 4 個 state，分別是 RESET、IDLE、X_addr 與 Y_addr。
+The functionality of DMA_fir encompasses the decoder from Lab 4 and the DMA itself, operating around four states: RESET, IDLE, X_addr, and Y_addr.
 
-首先，在 IDLE state 時若發現 X_FF 是空的 (~x_FF_full)，就會進入 X_addr state 去等待 arb 送資料進來，而當dma_ack_o 拉起來時便會回到 IDLE；而若 X_FF 是滿的而 y_FF 也是滿的 (y_FF_full) ，則會進入 Y_addr state 等待 arb 來收資料，而當dma_ack_o 拉起來時也會回到 IDLE。
+Initially, in the IDLE state, if X_FF is found to be empty (~x_FF_full), the system transitions to the X_addr state, awaiting data from the arb. It returns to IDLE when dma_ack_o is asserted. On the other hand, if X_FF is full and y_FF is also full (y_FF_full), it enters the Y_addr state, waiting for the arb to retrieve data. It returns to IDLE when dma_ack_o is asserted.
 
 ![image](https://hackmd.io/_uploads/ryzRUtGKT.png)
 
 
 ### Matrix Multiplication
 
-MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 讓它配合後面乘法的步驟。我們一樣採用 pipeline 的設計，讓它在 16 個cycle 就能算完所有的 data。
+The datapath for the Matrix Multiplication (MM) is designed as shown in the diagram. We utilize shift registers to design A_Ram and B_Ram, aligning them with the subsequent multiplication steps. We also adopt a pipeline design, enabling the calculation of all data within 16 cycles.
 
 ![image](https://hackmd.io/_uploads/ByvbsKGFT.png)
 
 
 
 ### Q Sort
-我們利用insert sorting的方法來插入，利用十個比較器，找出index來決定要插入的位置。
 
-![image](https://hackmd.io/_uploads/HkPL1qzKT.png =50%x) ![image](https://hackmd.io/_uploads/r1zMyqMt6.png)
+We use the method of insertion sorting, employing ten comparators to find the index that determines the position for insertion.
+
+![image](https://hackmd.io/_uploads/HkPL1qzKT.png) ![image](https://hackmd.io/_uploads/r1zMyqMt6.png)
 
 ### Arbitrary
-有優先順序的arb。
+
+There is a priority-based arbiter in place.
+
 ![image](https://hackmd.io/_uploads/rkqmkMEK6.png)
 
 
@@ -226,14 +231,19 @@ Bank0(
 
 ## Optimization
 
-我們先知道如果資料讀取順利，latancy=1T的狀況下，這三個硬體所需要的時間分別為 64x11=704 (fir)、10x2+10+10x2=50 (qsort)、32x2+16+16=96 (mm)。所以我們優化目標應該以此最長的cycle為優化目標。
+We already know that, under the condition of latency = 1T and smooth data reading, the time required for the three hardware components is as follows: 
 
-首先第一部分，我們的設計如下：
+- 64x11=704 (fir), 
+- 10x2+10+10x2=50 (qsort), 
+- 32x2+16+16=96 (mm). 
+
+Therefore, our optimization target should be based on this longest cycle.
+
+Firstly, for the first part, our design is as follows:
 
 ![image](https://hackmd.io/_uploads/rJ4f2cMFT.png)
 
-
-我們分別去測量fir qsort mm 所需時間分別為
+We measured the time required for fir, qsort, and mm separately, and the results are as follows:
 fir (1471 cycles)
 
 ![image](https://hackmd.io/_uploads/HyuYOZVFp.png)
@@ -246,9 +256,10 @@ qsort (315 cycles)
 
 ![image](https://hackmd.io/_uploads/rJgYu-NKT.png)
 
-但是因為有arb的功用其實可以concurrent!
 
-所以實際上完成三個的時間為(1570):
+However, due to the functionality of the arbiter, concurrent execution is possible! 
+
+Therefore, the actual time required to complete all three is (1570):
 
 ![image](https://hackmd.io/_uploads/Hkm2K-EY6.png)
 
@@ -261,8 +272,7 @@ waveform:
 
 ![image](https://hackmd.io/_uploads/B1rWlGNKp.png)
 
-
-所以由上面我們可以知道SDRAM的read至少多要花7個cycle才會回ack。所以如果要進一步的優化，我們要設計sdram有burst的功能並且搭配prefetch。
+From the above, we can infer that SDRAM read operations take at least 7 cycles to receive an acknowledgment. Therefore, for further optimization, we need to design SDRAM with burst functionality and integrate prefetching.
 
 ---
 
@@ -306,11 +316,6 @@ Above figure shows our design about prefetch controller.
 ### SDRAM burst
 
 - Since our prefetch buffer have the length of 8, if we can achieve the burst length of 8, it can fill up the empty buffer rapidly.
-
-
-
-
-
 
 
 
