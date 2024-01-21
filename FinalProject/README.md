@@ -8,6 +8,8 @@ In this final project, we designed Arbitrary, DMA, SDRAM, and hardware accelerat
 
 For storing instructions and data sets, we employ SDRAM, allowing the hardware to handle data transfer without relying on the CPU, thereby reducing cycles. Further enhancements include Prefetch design, enabling the retrieval of more data within a 3T latency, ultimately reducing the time spent fetching data.
 
+![螢幕擷取畫面 2024-01-17 235311](https://github.com/vic9112/SOC/assets/137171415/580de566-589b-4012-b0d4-634e2cbb7fac)
+
 ![image](https://hackmd.io/_uploads/rJ4f2cMFT.png)
 
 
