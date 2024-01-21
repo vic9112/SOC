@@ -1,28 +1,30 @@
 # SOC Lab Final Project
 
-## Overview Block Diagram
-
-![螢幕擷取畫面 2024-01-17 235311](https://github.com/vic9112/SOC/assets/137171415/45c09e35-8498-4db4-a677-df463b01f60a)
+[TOC]
 
 ---
+
 ## Computation System Overview
 
 在本次 final project 中，我們根據 Lab 4、Lab 6 的基礎，設計Arbitrary、DMA、SDRAM 與硬體加速器，希望能夠改進先前的結果。硬體加速器的部分包含之前 Lab3、4 使用的 Fir 以及新設計的 Matrix Multipication 和 Qsort 三個 module，利用三個DMA去配合它們的資料傳輸，而彼此資料的先後順序交由 Arbitrary 這個 module 去權重。而儲存instructions 和 data sets 的工作則使用 SDRAM，讓硬體不必透過 CPU 去收發資料以減少 cycle。進一步的 Prefetch 設計能在 3T 的 latency 中拿取更多的 Data，能夠再減少用於抓資料的時間。
+
+![image](https://hackmd.io/_uploads/rJ4f2cMFT.png)
+
 
 ---
 
 ## Firmware
 先更改section.ids ，這是為了把需要計算的data放在SDRAM。
 
- ![螢幕擷取畫面 2024-01-16 212642](https://hackmd.io/_uploads/Hyy4E-4tT.png) ![螢幕擷取畫面 2024-01-16 212631](https://hackmd.io/_uploads/HJImV-4Kp.png)
+ ![螢幕擷取畫面 2024-01-16 212642](https://hackmd.io/_uploads/Hyy4E-4tT.png =40%x) ![螢幕擷取畫面 2024-01-16 212631](https://hackmd.io/_uploads/HJImV-4Kp.png =50%x)
 
 我們的 Firmware 在這次的 final project 主要用於設定資料地址以及確認完成所有運算。A、B、C 為矩陣乘法用到的位置，X、Y 為 FIR 用到的位置，Q 為 qsort 用到的位置。
 
-![image](https://hackmd.io/_uploads/BJavg5MFT.png )
+![image](https://hackmd.io/_uploads/BJavg5MFT.png)
 
-![image](https://hackmd.io/_uploads/HkFsxcMYp.png )
+![image](https://hackmd.io/_uploads/HkFsxcMYp.png)
 
-![image](https://hackmd.io/_uploads/ByEbZcfFa.png )
+![image](https://hackmd.io/_uploads/ByEbZcfFa.png)
 
 由於這三種運算是同時進行，因此我們從 waveform 判斷 FIR 是運行最慢的，因此我們設定當收到 FIR 最後的資料就回到 AB51，同時我們也可以藉由此方法來判斷我們的算完的值確實也寫入SDRAM的位置。
 
@@ -36,31 +38,31 @@
 
 ### FIR & DMA
 
-![image](https://hackmd.io/_uploads/SkBFPZVF6.png )
+![image](https://hackmd.io/_uploads/SkBFPZVF6.png)
 
 Fir 的設計沿用在 Lab3、4 的架構，並加上 Y_buffer 讓 DMA 到 Buffer 去接收計算完的 data。當 Fir 計算完成時會送資料到 y_buffer 並送出 full 的訊號讓 DMA 接收資料，同時也等待 DMA 送新的 X 進來。
 
-![image](https://hackmd.io/_uploads/HJ2skYGF6.png )
+![image](https://hackmd.io/_uploads/HJ2skYGF6.png)
 
 DMA_fir 的功能涵蓋先前 Lab 4 的 decoder 與 DMA 本身，其運作圍繞 4 個 state，分別是 RESET、IDLE、X_addr 與 Y_addr。
 
 首先，在 IDLE state 時若發現 X_FF 是空的 (~x_FF_full)，就會進入 X_addr state 去等待 arb 送資料進來，而當dma_ack_o 拉起來時便會回到 IDLE；而若 X_FF 是滿的而 y_FF 也是滿的 (y_FF_full) ，則會進入 Y_addr state 等待 arb 來收資料，而當dma_ack_o 拉起來時也會回到 IDLE。
 
-![image](https://hackmd.io/_uploads/ryzRUtGKT.png )
+![image](https://hackmd.io/_uploads/ryzRUtGKT.png)
 
 
 ### Matrix Multiplication
 
 MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 讓它配合後面乘法的步驟。我們一樣採用 pipeline 的設計，讓它在 16 個cycle 就能算完所有的 data。
 
-![image](https://hackmd.io/_uploads/ByvbsKGFT.png )
+![image](https://hackmd.io/_uploads/ByvbsKGFT.png)
 
 
 
 ### Q Sort
 我們利用insert sorting的方法來插入，利用十個比較器，找出index來決定要插入的位置。
 
-![image](https://hackmd.io/_uploads/HkPL1qzKT.png ) ![image](https://hackmd.io/_uploads/r1zMyqMt6.png )
+![image](https://hackmd.io/_uploads/HkPL1qzKT.png =50%x) ![image](https://hackmd.io/_uploads/r1zMyqMt6.png)
 
 ### Arbitrary
 有優先順序的arb。
@@ -76,14 +78,13 @@ MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 
 ### Original Block Diagram
 
 - The overall diagram of SDRAM are shown below:
-
-![螢幕擷取畫面 2024-01-16 211732](https://hackmd.io/_uploads/SyJbM-Vta.png )
+![螢幕擷取畫面 2024-01-16 211732](https://hackmd.io/_uploads/SyJbM-Vta.png)
 
 - The wishbone cycle will pass through SDRAM controller and store/write data from/into SDRAM. We have do some optimize since the memory size of the original source code of SDRAM is not enough.
 
 #### FSM in SDRAM controller:
 
-![螢幕擷取畫面 2024-01-16 215237](https://hackmd.io/_uploads/ryYVcWNFp.png )
+![螢幕擷取畫面 2024-01-16 215237](https://hackmd.io/_uploads/ryYVcWNFp.png)
 
 - Some details about each state:
 
@@ -97,15 +98,15 @@ MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 
 
 - We decode the command sent from controller and mode register defined by user.
 
-![螢幕擷取畫面 2024-01-16 215632](https://hackmd.io/_uploads/HJkmi-VKp.png )
+![螢幕擷取畫面 2024-01-16 215632](https://hackmd.io/_uploads/HJkmi-VKp.png)
 
 - Read/write enable and address/data input/output
 
-![螢幕擷取畫面 2024-01-16 221328](https://hackmd.io/_uploads/rJrSyMVYp.png )
+![螢幕擷取畫面 2024-01-16 221328](https://hackmd.io/_uploads/rJrSyMVYp.png)
 
 - Command pipelined
 
-![螢幕擷取畫面 2024-01-16 221527](https://hackmd.io/_uploads/HkAF1f4tp.png )
+![螢幕擷取畫面 2024-01-16 221527](https://hackmd.io/_uploads/HkAF1f4tp.png)
 
 - MUX select the operation at current state.
 - MUX detect read/write command.
@@ -134,7 +135,7 @@ MM 的 datapath 如下圖，我們使用 shift register 去設計 A_Ram、B_Ram 
 
 ![螢幕擷取畫面 2024-01-16 212631](https://hackmd.io/_uploads/HJImV-4Kp.png)
 
-![螢幕擷取畫面 2024-01-16 212642](https://hackmd.io/_uploads/Hyy4E-4tT.png )
+![螢幕擷取畫面 2024-01-16 212642](https://hackmd.io/_uploads/Hyy4E-4tT.png)
 
 - Each data type needs at least 12-bit,but SDRAM only takes 8-bit for column address, and bank_address[9:8] will restrict our size.
 
@@ -229,7 +230,7 @@ Bank0(
 
 首先第一部分，我們的設計如下：
 
-![image](https://hackmd.io/_uploads/rJ4f2cMFT.png )
+![image](https://hackmd.io/_uploads/rJ4f2cMFT.png)
 
 
 我們分別去測量fir qsort mm 所需時間分別為
@@ -274,11 +275,11 @@ waveform:
 
 ### Block Diagram
 
-![螢幕擷取畫面 2024-01-16 220839](https://hackmd.io/_uploads/H1mfCZ4K6.png )
+![螢幕擷取畫面 2024-01-16 220839](https://hackmd.io/_uploads/H1mfCZ4K6.png)
 
 ### Prefetch Buffer:
 
-![螢幕擷取畫面 2024-01-16 223444](https://hackmd.io/_uploads/SJrGEMNt6.png )
+![螢幕擷取畫面 2024-01-16 223444](https://hackmd.io/_uploads/SJrGEMNt6.png)
 
 - We have 3 prefetch buffers (FIR/MM/QS), here I use FIR buffer to explan our idea.
 
@@ -302,11 +303,10 @@ Above figure shows our design about prefetch controller.
 - If HIT, terminate the wishbone read request by sending the ACK immediately.
 - If the buffer is Empty, start prefetch the data from SDRAM into buffer.
 
-#### SDRAM burst
+### SDRAM burst
 
 - Since our prefetch buffer have the length of 8, if we can achieve the burst length of 8, it can fill up the empty buffer rapidly.
 
-### 
 
 
 
@@ -317,13 +317,7 @@ Above figure shows our design about prefetch controller.
 
 
 
-
-
-
-
-
-
-## burst result
+#### burst result
 
 ![image](https://hackmd.io/_uploads/HJCdOGNKa.png)
 
@@ -371,8 +365,8 @@ Latency = 2.17s
 #### Performance
 |       | Latency(cycle * period) | Metric(ms) | Improvement |
 |:-----:|:--------:|:-------------------------:|:-------------------------:|
-|  Without FIFO       |  335676 * 25ns   |          44.78           |  *  |
-|  FIFO depth 4       |  78640  * 25ns   |          10.48           |4.27x|
+|  Without FIFO       |  114582 * 25ns   |          44.78           |  *  |
+|  FIFO depth 4       |  54076  * 25ns   |          10.48           |4.27x|
 
 
 
@@ -380,12 +374,12 @@ Latency = 2.17s
 
 ## Performance Summary
 
-|       | Software | Hardware without prefetch | Hardware with prefetch |
-|:-----:|:--------:|:-------------------------:|:-------------------------:|
-|  MM   |  55303   |            756            |    X                       |
-|  FIR  |  65890   |            1471            |  893                         |
-|  QS   |  14394   |            315            |     X                      |
-| total |  135587  |           1570            |      X                     |
+|       | Software(cycles) | Hardware without prefetch(cycles) | Hardware with prefetch (cycles)  |
+|:-----:|:--------:|:-------------------------:|:-------------------------: |
+|  MM   |  55303   |            756            |    X(no test)                       |
+|  FIR  |  65890   |            1471           |  X(no test)                       |
+|  QS   |  14394   |            315            |     X(no test)
+Total| 135587|1570|801
 
 ---
 
