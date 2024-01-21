@@ -8,6 +8,6 @@
 
 ## Also can refer to my HackMD:
 
-- Link of my HackMD
+- Link
 
   [https://hackmd.io/@vic9112]
