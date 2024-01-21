@@ -287,7 +287,7 @@ From the above, we can infer that SDRAM read operations take at least 7 cycles t
 
 ### Prefetch Buffer:
 
-![螢幕擷取畫面 2024-01-16 223444](https://hackmd.io/_uploads/SJrGEMNt6.png=70%x)
+![螢幕擷取畫面 2024-01-16 223444](https://hackmd.io/_uploads/SJrGEMNt6.png)
 
 - We have 3 prefetch buffers (FIR/MM/QS), here I use FIR buffer to explan our idea.
 
