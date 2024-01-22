@@ -1,4 +1,4 @@
-// Refer to the source code from NTU TA (Group 7) 
+// Refer to the source code from NTU TA (Group 6) 
 // and remap the user address inside.
 
 module sdram_controller_example (
