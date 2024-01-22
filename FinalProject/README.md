@@ -1,4 +1,4 @@
-# SOC Lab Final Project
+# SOC Lab Final Project - WLOS Optimization
 
 ---
 
