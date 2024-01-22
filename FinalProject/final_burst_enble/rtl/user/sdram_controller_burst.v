@@ -1,3 +1,6 @@
+// Refer to the source code from NTU TA (Group 7) 
+// and remap the user address inside.
+
 module sdram_controller_example (
         input   clk,
         input   rst,
