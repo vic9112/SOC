@@ -2,6 +2,8 @@
 
 ---
 
+Contributers: 陳冠晰、劉祐瑋、王彥智、陳昇達、陳柏翰
+
 ## Computation System Overview
 
 In this final project, we designed Arbitrary, DMA, SDRAM, and hardware accelerators based on the foundations of Lab 4 and Lab 6, aiming to improve upon previous results. The hardware accelerator section includes three modules: Fir, Matrix Multiplication, and Qsort. Fir was previously used in Lab 3 and Lab 4. We utilize three DMAs to facilitate data transfer for these modules, and the sequencing of data between them is controlled by the Arbitrary module, which assigns weights.
