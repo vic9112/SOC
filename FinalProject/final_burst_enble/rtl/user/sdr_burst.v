@@ -42,11 +42,12 @@
 *
 **************************************************************************/
 
+// Refer to the source code from NTU TA (Group 7) 
+// and remap the user address inside.
+
 // This is a synthesiable SDRAM design, interface signals includes
 // 1. SDRAM interface - from sdr_controller
 // 2. BRAM - Xilinx BRAM Interface 
-// 
-
 
 `timescale 1ns / 1ps
 
@@ -57,6 +58,7 @@
 //    - add BRAM interface control
 //    - BRAM size 16KB, each Bank is 4KB, use address [15:14] to distinguish Bank
 // 4. Dq (in/out) separate into
+
 module sdr_example (
         // Dq separate into Dqi (input), Dqo (output)
         Dqi,
