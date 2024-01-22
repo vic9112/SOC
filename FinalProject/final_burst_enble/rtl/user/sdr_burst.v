@@ -42,7 +42,7 @@
 *
 **************************************************************************/
 
-// Refer to the source code from NTU TA (Group 7) 
+// Refer to the source code from NTU TA (Group 6) 
 // and remap the user address inside.
 
 // This is a synthesiable SDRAM design, interface signals includes
