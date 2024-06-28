@@ -82,7 +82,7 @@ There is a priority-based arbiter in place.
 
 ### Original Block Diagram
 
-- The overall diagram of SDRAM are shown below:
+- The overall diagram of SDRAM are shown below: <br>
 ![螢幕擷取畫面 2024-01-16 211732](https://hackmd.io/_uploads/SyJbM-Vta.png)
 
 - The wishbone cycle will pass through SDRAM controller and store/write data from/into SDRAM. We have do some optimize since the memory size of the original source code of SDRAM is not enough.
