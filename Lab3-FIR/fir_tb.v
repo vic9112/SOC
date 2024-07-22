@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Vic Chen
 // 
 // Create Date: 08/20/2023 10:38:55 AM
-// Design Name: 
+// Design Name: Testbench for Lab3 FIR
 // Module Name: fir_tb
 // Project Name: 
 // Target Devices: 
