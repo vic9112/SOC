@@ -10,6 +10,7 @@
 `define AP_IDLE 2'b01
 `define AP_DONE 2'b10
 
+// [Vic]: version 0, which assume that data-stream is continuous.
 module fir 
   #(parameter pADDR_WIDTH = 12,
     parameter pDATA_WIDTH = 32,
