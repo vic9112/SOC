@@ -1,0 +1,4 @@
+rm -rf xsim.dir/ *.log *.pb *.jou *.wdb
+rm -rf ./gdb.debug ./gdbwave.debug
+rm -f *.vcd
+rm -f *.s *.o *.i *.map

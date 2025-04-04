@@ -25,7 +25,9 @@ $ make
 
 # Update
 
-- 12/19
+- 2025/04/04
+  Update RTL & Firmware
+- 2023/12/19
   Achieve 12T to process one data
 
 

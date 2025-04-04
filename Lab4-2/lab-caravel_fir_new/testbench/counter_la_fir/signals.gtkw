@@ -1,0 +1,154 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Apr  4 08:13:39 2025
+[*]
+[dumpfile] "/home/ubuntu/Lab4-2/lab-caravel_fir/testbench/counter_la_fir/counter_la_fir.vcd"
+[dumpfile_mtime] "Fri Apr  4 08:11:41 2025"
+[dumpfile_size] 31755986
+[savefile] "/home/ubuntu/Lab4-2/lab-caravel_fir/testbench/counter_la_fir/signals.gtkw"
+[timestart] 622451500
+[size] 1860 1016
+[pos] -1 -1
+*-15.686926 622637500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] counter_la_fir_tb.
+[treeopen] counter_la_fir_tb.uut.
+[treeopen] counter_la_fir_tb.uut.mprj.
+[treeopen] counter_la_fir_tb.uut.soc.
+[treeopen] counter_la_fir_tb.uut.soc.core.
+[treeopen] counter_la_fir_tb.uut.soc.core.VexRiscv.
+[sst_width] 281
+[signals_width] 409
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+counter_la_fir_tb.uut.mprj.fir_decode
+counter_la_fir_tb.uut.mprj.wbs_we_i
+counter_la_fir_tb.uut.mprj.wb_rst_i
+counter_la_fir_tb.uut.mprj.wbs_cyc_i
+counter_la_fir_tb.uut.mprj.wbs_ack_o
+@22
+counter_la_fir_tb.uut.mprj.wbs_adr_i[31:0]
+@28
+counter_la_fir_tb.uut.mprj.fir_strin
+counter_la_fir_tb.uut.mprj.fir_strout
+@22
+counter_la_fir_tb.uut.mprj.fir_hardware.araddr[11:0]
+@28
+counter_la_fir_tb.uut.mprj.fir_hardware.arvalid
+counter_la_fir_tb.uut.mprj.fir_hardware.arready
+counter_la_fir_tb.uut.mprj.fir_hardware.rready
+counter_la_fir_tb.uut.mprj.fir_hardware.rvalid
+@200
+-
+@28
+counter_la_fir_tb.uut.mprj.fir_hardware.ap_start
+counter_la_fir_tb.uut.mprj.fir_hardware.ap_idle
+counter_la_fir_tb.uut.mprj.fir_hardware.ap_done
+@200
+-
+@28
+counter_la_fir_tb.uut.mprj.fir_hardware.ss_en
+counter_la_fir_tb.uut.mprj.fir_hardware.fir_en
+counter_la_fir_tb.uut.mprj.fir_hardware.x_full
+counter_la_fir_tb.uut.mprj.fir_hardware.run
+counter_la_fir_tb.uut.mprj.fir_hardware.x_init
+@24
+counter_la_fir_tb.uut.mprj.fir_hardware.x_cnt[9:0]
+@200
+-
+@24
+counter_la_fir_tb.uut.mprj.fir_hardware.i[9:0]
+counter_la_fir_tb.uut.mprj.fir_hardware.t[9:0]
+@200
+-
+@28
+counter_la_fir_tb.uut.mprj.fir_hardware.axis_clk
+counter_la_fir_tb.uut.mprj.fir_hardware.axis_rst_n
+@200
+-
+@22
+counter_la_fir_tb.uut.soc.core.VexRiscv.IBusCachedPlugin_cache.io_cpu_fetch_physicalAddress[31:0]
+counter_la_fir_tb.uut.soc.core.VexRiscv.IBusCachedPlugin_cache.io_cpu_decode_physicalAddress[31:0]
+@23
+counter_la_fir_tb.uut.soc.core.VexRiscv.IBusCachedPlugin_cache.io_cpu_decode_data[31:0]
+@22
+counter_la_fir_tb.uut.soc.core.VexRiscv.IBusCachedPlugin_cache.lineLoader_write_data_0_payload_data[31:0]
+@200
+-
+@28
+counter_la_fir_tb.uut.mprj.fir_hardware.ss_tlast
+[color] 2
+counter_la_fir_tb.uut.mprj.fir_hardware.ss_tvalid
+[color] 5
+counter_la_fir_tb.uut.mprj.fir_hardware.ss_tready
+@420
+counter_la_fir_tb.uut.mprj.fir_hardware.ss_tdata[31:0]
+@24
+counter_la_fir_tb.uut.mprj.ss_cnt[31:0]
+counter_la_fir_tb.uut.mprj.data_len[31:0]
+@200
+-
+@28
+counter_la_fir_tb.uut.mprj.fir_hardware.sm_tlast
+[color] 5
+counter_la_fir_tb.uut.mprj.fir_hardware.sm_tvalid
+[color] 2
+counter_la_fir_tb.uut.mprj.fir_hardware.sm_tready
+@c00420
+counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+@28
+(0)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(1)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(2)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(3)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(4)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(5)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(6)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(7)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(8)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(9)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(10)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(11)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(12)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(13)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(14)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(15)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(16)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(17)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(18)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(19)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(20)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(21)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(22)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(23)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(24)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(25)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(26)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(27)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(28)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(29)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(30)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+(31)counter_la_fir_tb.uut.mprj.fir_hardware.sm_tdata[31:0]
+@1401200
+-group_end
+@200
+-
+@800028
+counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_x[2:0]
+@28
+(0)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_x[2:0]
+(1)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_x[2:0]
+(2)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_x[2:0]
+@1001200
+-group_end
+@800022
+counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_y[3:0]
+@28
+(0)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_y[3:0]
+(1)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_y[3:0]
+(2)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_y[3:0]
+(3)counter_la_fir_tb.uut.mprj.fir_hardware.pipeline_y[3:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
