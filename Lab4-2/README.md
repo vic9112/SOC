@@ -11,7 +11,10 @@ $ source run_clean
 $ source run_sim
 ```
 - Above generate counter_la_fir.vcd
-- Then we can see the waveform by using gtkwave.
+- Then we can see the waveform by using gtkwave:
+``` sh
+gtkwave counter_la_fir.vcd
+```
 - Upload 'signals.gtkw' in GTKWave GUI to debug:
 
 ![螢幕擷取畫面 2025-04-04 162920](https://github.com/user-attachments/assets/e1ce02fb-a74e-40b3-bf34-f86c07c59143)
