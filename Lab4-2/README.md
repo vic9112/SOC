@@ -1,15 +1,23 @@
 # Execute FIR in user project by reading firmware code in user BRAM
 
 ## Simulation for FIR
-- This will generate firmware with instructions which are not re-ordered
-- ![螢幕擷取畫面 2023-12-06 211318](https://github.com/vic9112/SOC/assets/137171415/d282ae85-83bc-4122-8cbd-f2685cea643d)
+- This will generate firmware with instructions which are not re-ordered (counter_la_fir.hex)
+- Change the firmware in [spiflash.v](https://github.com/vic9112/SOC/blob/main/Lab4-2/lab-caravel_fir_new/vip/spiflash.v), line252:
+  ![螢幕擷取畫面 2025-04-04 162631](https://github.com/user-attachments/assets/42607c0c-48fd-43a0-82d7-5435a8000e89)
+
 ```sh
-$ cd ~/Lab4-2/lab-caravel_fir/testbench/counter_la_fir
+$ cd ~/Lab4-2/lab-caravel_fir_new/testbench/counter_la_fir
 $ source run_clean
 $ source run_sim
 ```
 - Above generate counter_la_fir.vcd
-- Then we can see the waveform by using gtkwave to open .vcd file.
+- Then we can see the waveform by using gtkwave.
+- Upload 'signals.gtkw' in GTKWave GUI to debug:
+  ![螢幕擷取畫面 2025-04-04 162920](https://github.com/user-attachments/assets/e1ce02fb-a74e-40b3-bf34-f86c07c59143)
+  ![螢幕擷取畫面 2025-04-04 162959](https://github.com/user-attachments/assets/60c8f84d-edc0-4153-85e1-9dd84dfbc50d)
+  
+
+
 
 ```sh
 $ gtkwave counter_la_fir.vcd
