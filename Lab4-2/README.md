@@ -1,6 +1,8 @@
 # Execute FIR in user project by reading firmware code in user BRAM
 
 ## Simulation for FIR
+- This will generate firmware with instructions which are not re-ordered
+- ![螢幕擷取畫面 2023-12-06 211318](https://github.com/vic9112/SOC/assets/137171415/d282ae85-83bc-4122-8cbd-f2685cea643d)
 ```sh
 $ cd ~/Lab4-2/lab-caravel_fir/testbench/counter_la_fir
 $ source run_clean
@@ -17,11 +19,11 @@ $ gtkwave counter_la_fir.vcd
 ## XSIM
 
 ```sh
-$ make
+$ make counter_la_fir
 ```
-- which will generate xsim.log in current directory.
+- which will generate xsim.log in the current directory.
 
-![螢幕擷取畫面 2023-12-06 211318](https://github.com/vic9112/SOC/assets/137171415/d282ae85-83bc-4122-8cbd-f2685cea643d)
+![螢幕擷取畫面 2025-04-04 162132](https://github.com/user-attachments/assets/37fe1c04-b336-4da7-baed-fbd43bb66272)
 
 # Update
 
