@@ -14,6 +14,7 @@ $ source run_sim
 - Then we can see the waveform by using gtkwave.
 - Upload 'signals.gtkw' in GTKWave GUI to debug:
   ![螢幕擷取畫面 2025-04-04 162920](https://github.com/user-attachments/assets/e1ce02fb-a74e-40b3-bf34-f86c07c59143)
+
   ![螢幕擷取畫面 2025-04-04 162959](https://github.com/user-attachments/assets/60c8f84d-edc0-4153-85e1-9dd84dfbc50d)
   
 
