@@ -1,0 +1,2083 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Apr 17 07:48:02 2025
+# Process ID: 17646
+# Current directory: /home/ubuntu/2025_implementation_project/lab03/sim
+# Command line: vivado
+# Log file: /home/ubuntu/2025_implementation_project/lab03/sim/vivado.log
+# Journal file: /home/ubuntu/2025_implementation_project/lab03/sim/vivado.jou
+# Running On: ubuntu2004, OS: Linux, CPU Frequency: 2592.000 MHz, CPU Physical cores: 2, Host memory: 10425 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 7606.832 ; gain = 80.230 ; free physical = 4147 ; free virtual = 8343
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+[ERROR] [Pattern          1] Golden answer:       41864, Your answer:      -80364
+[ERROR] [Pattern          2] Golden answer:     -311516, Your answer:      493626
+[ERROR] [Pattern          3] Golden answer:      419894, Your answer:     -546954
+[ERROR] [Pattern          4] Golden answer:     -525986, Your answer:      707677
+[ERROR] [Pattern          5] Golden answer:      540137, Your answer:    -1302838
+[ERROR] [Pattern          6] Golden answer:     -529696, Your answer:      787717
+[ERROR] [Pattern          7] Golden answer:      744689, Your answer:     -483324
+[ERROR] [Pattern          8] Golden answer:     -176446, Your answer:      614127
+[ERROR] [Pattern          9] Golden answer:      367925, Your answer:      447160
+[ERROR] [Pattern         10] Golden answer:      423498, Your answer:       96623
+[ERROR] [Pattern         11] Golden answer:      564520, Your answer:      776045
+[ERROR] [Pattern         12] Golden answer:     -557309, Your answer:     -563985
+[ERROR] [Pattern         13] Golden answer:        4069, Your answer:      304996
+[ERROR] [Pattern         14] Golden answer:      417117, Your answer:     1109843
+[ERROR] [Pattern         15] Golden answer:       -5050, Your answer:     -477666
+[ERROR] [Pattern         16] Golden answer:       20628, Your answer:     -359288
+[ERROR] [Pattern         17] Golden answer:    -2240164, Your answer:    -1803903
+[ERROR] [Pattern         18] Golden answer:     1249427, Your answer:       83611
+[ERROR] [Pattern         19] Golden answer:    -3344435, Your answer:    -2862826
+[ERROR] [Pattern         20] Golden answer:    -1086398, Your answer:    -2112999
+[ERROR] [Pattern         21] Golden answer:    -1779776, Your answer:     -547867
+[ERROR] [Pattern         22] Golden answer:     1561033, Your answer:      790761
+[ERROR] [Pattern         23] Golden answer:      867924, Your answer:     2289671
+[ERROR] [Pattern         24] Golden answer:     1652775, Your answer:     1067197
+[ERROR] [Pattern         25] Golden answer:     1529703, Your answer:     2402364
+[ERROR] [Pattern         26] Golden answer:     2966889, Your answer:     2874829
+[ERROR] [Pattern         27] Golden answer:     -693201, Your answer:    -1178978
+[ERROR] [Pattern         28] Golden answer:     -634770, Your answer:     -367715
+[ERROR] [Pattern         29] Golden answer:    -3199583, Your answer:    -3910027
+[ERROR] [Pattern         30] Golden answer:    -1187741, Your answer:    -1277080
+[ERROR] [Pattern         31] Golden answer:    -3857169, Your answer:    -3181632
+[ERROR] [Pattern         32] Golden answer:     -727764, Your answer:    -1964238
+[ERROR] [Pattern         33] Golden answer:      846012, Your answer:     1962747
+[ERROR] [Pattern         34] Golden answer:     3721297, Your answer:     2719581
+[ERROR] [Pattern         35] Golden answer:     1210730, Your answer:     1912806
+[ERROR] [Pattern         36] Golden answer:     2025942, Your answer:     1834156
+[ERROR] [Pattern         37] Golden answer:     -366110, Your answer:     -265170
+[ERROR] [Pattern        163] Golden answer:     2221953, Your answer:      167491
+[ERROR] [Pattern        164] Golden answer:    -1852614, Your answer:      542691
+[ERROR] [Pattern        165] Golden answer:     3731554, Your answer:     2051569
+[ERROR] [Pattern        166] Golden answer:     -863040, Your answer:      578749
+[ERROR] [Pattern        167] Golden answer:    -3274613, Your answer:    -4873766
+[ERROR] [Pattern        168] Golden answer:     1117101, Your answer:      644526
+[ERROR] [Pattern        169] Golden answer:      710284, Your answer:      968817
+[ERROR] [Pattern        170] Golden answer:    -2337885, Your answer:    -4200940
+[ERROR] [Pattern        171] Golden answer:     1842539, Your answer:     4063922
+[ERROR] [Pattern        172] Golden answer:    -3879394, Your answer:    -4400124
+[ERROR] [Pattern        173] Golden answer:     4425654, Your answer:     2872801
+[ERROR] [Pattern        174] Golden answer:    -3796012, Your answer:    -3340382
+[ERROR] [Pattern        175] Golden answer:      974529, Your answer:      466515
+[ERROR] [Pattern        176] Golden answer:    -3345327, Your answer:    -1747239
+[ERROR] [Pattern        177] Golden answer:     -625444, Your answer:      644509
+[ERROR] [Pattern        178] Golden answer:     -355895, Your answer:    -2416899
+[ERROR] [Pattern        179] Golden answer:     -528175, Your answer:     2704476
+[ERROR] [Pattern        180] Golden answer:     1705603, Your answer:     1692462
+[ERROR] [Pattern        181] Golden answer:    -1183677, Your answer:    -2230250
+[ERROR] [Pattern        182] Golden answer:     5395015, Your answer:     3738245
+[ERROR] [Pattern        183] Golden answer:    -2486083, Your answer:    -1087480
+[ERROR] [Pattern        184] Golden answer:      509913, Your answer:    -1515589
+[ERROR] [Pattern        185] Golden answer:     -567177, Your answer:     -960688
+[ERROR] [Pattern        186] Golden answer:    -1260829, Your answer:     -507499
+[ERROR] [Pattern        187] Golden answer:     2400959, Your answer:     2129878
+[ERROR] [Pattern        188] Golden answer:    -1929297, Your answer:      180654
+[ERROR] [Pattern        189] Golden answer:    -1715124, Your answer:    -2373220
+[ERROR] [Pattern        190] Golden answer:     4671478, Your answer:     5790223
+[ERROR] [Pattern        191] Golden answer:    -3819242, Your answer:    -2846471
+[ERROR] [Pattern        192] Golden answer:     3498423, Your answer:      981409
+[ERROR] [Pattern        193] Golden answer:    -1674998, Your answer:     1621765
+[ERROR] [Pattern        194] Golden answer:    -1150115, Your answer:    -2718405
+[ERROR] [Pattern        195] Golden answer:     -485043, Your answer:    -1073431
+[ERROR] [Pattern        196] Golden answer:    -1431732, Your answer:     -645578
+[ERROR] [Pattern        197] Golden answer:      -24047, Your answer:     -829259
+[ERROR] [Pattern        198] Golden answer:     -923027, Your answer:     -712925
+[ERROR] [Pattern        199] Golden answer:    -1205431, Your answer:    -1316011
+[ERROR] [Pattern        329] Golden answer:      969772, Your answer:     1358178
+[ERROR] [Pattern        330] Golden answer:     -681597, Your answer:    -1901952
+[ERROR] [Pattern        331] Golden answer:     3196423, Your answer:     5228722
+[ERROR] [Pattern        332] Golden answer:     2696595, Your answer:     1423293
+[ERROR] [Pattern        333] Golden answer:      442313, Your answer:     1804364
+[ERROR] [Pattern        334] Golden answer:     3958503, Your answer:     1745863
+[ERROR] [Pattern        335] Golden answer:      800775, Your answer:     2594576
+[ERROR] [Pattern        336] Golden answer:      679660, Your answer:     1246166
+[ERROR] [Pattern        337] Golden answer:     2421076, Your answer:     -238789
+[ERROR] [Pattern        338] Golden answer:    -2614320, Your answer:      111519
+[ERROR] [Pattern        339] Golden answer:      780575, Your answer:    -3598740
+[ERROR] [Pattern        340] Golden answer:    -2406999, Your answer:      877395
+[ERROR] [Pattern        341] Golden answer:     2748040, Your answer:    -1077358
+[ERROR] [Pattern        342] Golden answer:    -1984268, Your answer:     -864184
+[ERROR] [Pattern        343] Golden answer:    -1184480, Your answer:     -843243
+[ERROR] [Pattern        344] Golden answer:      228884, Your answer:    -1248329
+[ERROR] [Pattern        345] Golden answer:      645259, Your answer:      602977
+[ERROR] [Pattern        346] Golden answer:     2726730, Your answer:     1413597
+[ERROR] [Pattern        347] Golden answer:    -3705784, Your answer:    -2877485
+[ERROR] [Pattern        348] Golden answer:      964859, Your answer:     2741337
+[ERROR] [Pattern        349] Golden answer:     3889083, Your answer:      756127
+[ERROR] [Pattern        350] Golden answer:    -3672898, Your answer:    -2985234
+[ERROR] [Pattern        351] Golden answer:     2073738, Your answer:     2734610
+[ERROR] [Pattern        352] Golden answer:    -2489266, Your answer:    -2123464
+[ERROR] [Pattern        353] Golden answer:      230050, Your answer:     -202335
+[ERROR] [Pattern        354] Golden answer:    -1611933, Your answer:    -1110670
+[ERROR] [Pattern        355] Golden answer:    -5224963, Your answer:    -2796568
+[ERROR] [Pattern        356] Golden answer:     2349468, Your answer:    -1375608
+[ERROR] [Pattern        357] Golden answer:    -4059797, Your answer:     -995951
+[ERROR] [Pattern        358] Golden answer:     3255301, Your answer:     1227588
+[ERROR] [Pattern        359] Golden answer:     -703488, Your answer:    -1136031
+[ERROR] [Pattern        360] Golden answer:    -2926581, Your answer:    -2566263
+[ERROR] [Pattern        361] Golden answer:     1580479, Your answer:    -1656679
+[ERROR] [Pattern        362] Golden answer:    -1981122, Your answer:     1779813
+[ERROR] [Pattern        363] Golden answer:      102107, Your answer:    -2101439
+[ERROR] [Pattern        364] Golden answer:      730370, Your answer:     -619674
+[ERROR] [Pattern        365] Golden answer:    -2536056, Your answer:     1046925
+[ERROR] [Pattern        366] Golden answer:     4109027, Your answer:     -373579
+[ERROR] [Pattern        367] Golden answer:    -5237343, Your answer:     -652189
+[ERROR] [Pattern        368] Golden answer:     1511713, Your answer:     -527906
+[ERROR] [Pattern        369] Golden answer:    -2391299, Your answer:      394443
+[ERROR] [Pattern        370] Golden answer:     -192724, Your answer:    -2212059
+[ERROR] [Pattern        371] Golden answer:    -1700702, Your answer:     1559419
+[ERROR] [Pattern        372] Golden answer:     -127065, Your answer:    -3394044
+[ERROR] [Pattern        373] Golden answer:     -268088, Your answer:      599271
+[ERROR] [Pattern        374] Golden answer:     -485557, Your answer:     -867506
+[ERROR] [Pattern        375] Golden answer:     2514221, Your answer:     2724861
+[ERROR] [Pattern        376] Golden answer:     -360236, Your answer:     3213938
+[ERROR] [Pattern        377] Golden answer:      329588, Your answer:       80219
+[ERROR] [Pattern        378] Golden answer:      154593, Your answer:    -1230062
+[ERROR] [Pattern        379] Golden answer:      776014, Your answer:     2456904
+[ERROR] [Pattern        380] Golden answer:      648098, Your answer:     4618366
+[ERROR] [Pattern        381] Golden answer:     1263999, Your answer:    -1479056
+[ERROR] [Pattern        382] Golden answer:      417412, Your answer:      332967
+[ERROR] [Pattern        383] Golden answer:     1935727, Your answer:     1186894
+[ERROR] [Pattern        384] Golden answer:    -4121020, Your answer:    -2613503
+[ERROR] [Pattern        385] Golden answer:      915291, Your answer:    -4007778
+[ERROR] [Pattern        386] Golden answer:    -1436405, Your answer:     -812637
+[ERROR] [Pattern        387] Golden answer:    -3551927, Your answer:    -1841394
+[ERROR] [Pattern        388] Golden answer:      172218, Your answer:      360851
+[ERROR] [Pattern        389] Golden answer:      845541, Your answer:    -4655827
+[ERROR] [Pattern        390] Golden answer:    -1748917, Your answer:     4192656
+[ERROR] [Pattern        391] Golden answer:     1100662, Your answer:      786402
+[ERROR] [Pattern        392] Golden answer:     1260238, Your answer:     2470906
+[ERROR] [Pattern        393] Golden answer:     4865690, Your answer:     1971045
+[ERROR] [Pattern        394] Golden answer:    -1665477, Your answer:     3555220
+[ERROR] [Pattern        395] Golden answer:     2357849, Your answer:      437224
+[ERROR] [Pattern        396] Golden answer:     1078162, Your answer:     -912243
+[ERROR] [Pattern        397] Golden answer:    -2078686, Your answer:     -984050
+[ERROR] [Pattern        398] Golden answer:    -2026619, Your answer:    -1423852
+------End the data input(AXI-Stream)------
+[ERROR] [Pattern        399] Golden answer:     -872252, Your answer:     -402786
+--------Simulation Failed---------
+$finish called at time : 236305 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 7729.125 ; gain = 73.852 ; free physical = 3938 ; free virtual = 8148
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 7729.125 ; gain = 84.262 ; free physical = 3938 ; free virtual = 8148
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+==== FIR can receive data X stream-in ====
+ERROR: exp =          -6, rdata =          -1
+[ERROR] [Pattern          0] Golden answer:        7808, Your answer:      -29280
+[ERROR] [Pattern          1] Golden answer:       41864, Your answer:     -212622
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -7, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           3, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =           0, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =           9, rdata =          -1
+ERROR: exp =           7, rdata =          -1
+ERROR: exp =          -4, rdata =          -1
+ERROR: exp =           4, rdata =          -1
+ERROR: exp =          -6, rdata =          -1
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7762.141 ; gain = 4.734 ; free physical = 3930 ; free virtual = 8127
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+[ERROR] [Pattern          0] Golden answer:        7808, Your answer:      -29280
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7764.141 ; gain = 0.000 ; free physical = 3922 ; free virtual = 8118
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+---------------------------------------------
+-----------Congratulations! Pass-------------
+$finish called at time : 237485 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 7780.152 ; gain = 0.000 ; free physical = 3893 ; free virtual = 8108
+add_files -norecurse /home/ubuntu/2025_implementation_project/lab03/hdl/fir_0315.v
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir_0315.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+---------------------------------------------
+-----------Congratulations! Pass-------------
+$finish called at time : 237485 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7816.164 ; gain = 0.000 ; free physical = 3818 ; free virtual = 8035
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+set_property is_enabled false [get_files  /home/ubuntu/2025_implementation_project/lab03/hdl/fir_0315.v]
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+---------------------------------------------
+-----------Congratulations! Pass-------------
+$finish called at time : 237485 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7843.180 ; gain = 0.000 ; free physical = 3736 ; free virtual = 7962
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+[ERROR] [Pattern          0] Golden answer:        7808, Your answer:      921344
+[ERROR] [Pattern        161] Golden answer:     2958072, Your answer:     3888272
+[ERROR] [Pattern        162] Golden answer:    -5893093, Your answer:   -19179249
+[ERROR] [Pattern        163] Golden answer:     2221953, Your answer:    16101923
+[ERROR] [Pattern        164] Golden answer:    -1852614, Your answer:     7353416
+[ERROR] [Pattern        165] Golden answer:     3731554, Your answer:     5550432
+[ERROR] [Pattern        166] Golden answer:     -863040, Your answer:     -399120
+[ERROR] [Pattern        167] Golden answer:    -3274613, Your answer:    -8411173
+[ERROR] [Pattern        169] Golden answer:      710284, Your answer:    12912938
+[ERROR] [Pattern        170] Golden answer:    -2337885, Your answer:   -12959549
+[ERROR] [Pattern        173] Golden answer:     4425654, Your answer:     8520674
+[ERROR] [Pattern        174] Golden answer:    -3796012, Your answer:    -8257982
+[ERROR] [Pattern        176] Golden answer:    -3345327, Your answer:    -6227547
+[ERROR] [Pattern        327] Golden answer:     1024169, Your answer:     2195143
+[ERROR] [Pattern        328] Golden answer:    -1698883, Your answer:    -3402975
+[ERROR] [Pattern        330] Golden answer:     -681597, Your answer:    15595601
+[ERROR] [Pattern        331] Golden answer:     3196423, Your answer:    13062251
+[ERROR] [Pattern        332] Golden answer:     2696595, Your answer:     4660839
+[ERROR] [Pattern        333] Golden answer:      442313, Your answer:    -7720111
+------End the data input(AXI-Stream)------
+--------Simulation Failed---------
+$finish called at time : 237485 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 7859.188 ; gain = 0.000 ; free physical = 3784 ; free virtual = 8004
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+[ERROR] [Pattern          1] Golden answer:       41864, Your answer:      -80364
+[ERROR] [Pattern          2] Golden answer:     -311516, Your answer:      493626
+[ERROR] [Pattern          3] Golden answer:      419894, Your answer:     -546954
+[ERROR] [Pattern          4] Golden answer:     -525986, Your answer:      707677
+[ERROR] [Pattern          5] Golden answer:      540137, Your answer:    -1302838
+[ERROR] [Pattern          6] Golden answer:     -529696, Your answer:      787717
+[ERROR] [Pattern          7] Golden answer:      744689, Your answer:     -483324
+[ERROR] [Pattern          8] Golden answer:     -176446, Your answer:      614127
+[ERROR] [Pattern          9] Golden answer:      367925, Your answer:      447160
+[ERROR] [Pattern         10] Golden answer:      423498, Your answer:       96623
+[ERROR] [Pattern         11] Golden answer:      564520, Your answer:      776045
+[ERROR] [Pattern         12] Golden answer:     -557309, Your answer:     -563985
+[ERROR] [Pattern         13] Golden answer:        4069, Your answer:      304996
+[ERROR] [Pattern         14] Golden answer:      417117, Your answer:     1109843
+[ERROR] [Pattern         15] Golden answer:       -5050, Your answer:     -477666
+[ERROR] [Pattern         16] Golden answer:       20628, Your answer:     -359288
+[ERROR] [Pattern         17] Golden answer:    -2240164, Your answer:    -1803903
+[ERROR] [Pattern         18] Golden answer:     1249427, Your answer:       83611
+[ERROR] [Pattern         19] Golden answer:    -3344435, Your answer:    -2862826
+[ERROR] [Pattern         20] Golden answer:    -1086398, Your answer:    -2112999
+[ERROR] [Pattern         21] Golden answer:    -1779776, Your answer:     -547867
+[ERROR] [Pattern         22] Golden answer:     1561033, Your answer:      790761
+[ERROR] [Pattern         23] Golden answer:      867924, Your answer:     2289671
+[ERROR] [Pattern         24] Golden answer:     1652775, Your answer:     1067197
+[ERROR] [Pattern         25] Golden answer:     1529703, Your answer:     2402364
+[ERROR] [Pattern         26] Golden answer:     2966889, Your answer:     2874829
+[ERROR] [Pattern         27] Golden answer:     -693201, Your answer:    -1178978
+[ERROR] [Pattern         28] Golden answer:     -634770, Your answer:     -367715
+[ERROR] [Pattern         29] Golden answer:    -3199583, Your answer:    -3910027
+[ERROR] [Pattern         30] Golden answer:    -1187741, Your answer:    -1277080
+[ERROR] [Pattern         31] Golden answer:    -3857169, Your answer:    -3181632
+[ERROR] [Pattern         32] Golden answer:     -727764, Your answer:    -1964238
+[ERROR] [Pattern         33] Golden answer:      846012, Your answer:     1962747
+[ERROR] [Pattern         34] Golden answer:     3721297, Your answer:     2719581
+[ERROR] [Pattern         35] Golden answer:     1210730, Your answer:     1912806
+[ERROR] [Pattern         36] Golden answer:     2025942, Your answer:     1834156
+[ERROR] [Pattern         37] Golden answer:     -366110, Your answer:     -265170
+[ERROR] [Pattern        163] Golden answer:     2221953, Your answer:      167491
+[ERROR] [Pattern        164] Golden answer:    -1852614, Your answer:      542691
+[ERROR] [Pattern        165] Golden answer:     3731554, Your answer:     2051569
+[ERROR] [Pattern        166] Golden answer:     -863040, Your answer:      578749
+[ERROR] [Pattern        167] Golden answer:    -3274613, Your answer:    -4873766
+[ERROR] [Pattern        168] Golden answer:     1117101, Your answer:      644526
+[ERROR] [Pattern        169] Golden answer:      710284, Your answer:      968817
+[ERROR] [Pattern        170] Golden answer:    -2337885, Your answer:    -4200940
+[ERROR] [Pattern        171] Golden answer:     1842539, Your answer:     4063922
+[ERROR] [Pattern        172] Golden answer:    -3879394, Your answer:    -4400124
+[ERROR] [Pattern        173] Golden answer:     4425654, Your answer:     2872801
+[ERROR] [Pattern        174] Golden answer:    -3796012, Your answer:    -3340382
+[ERROR] [Pattern        175] Golden answer:      974529, Your answer:      466515
+[ERROR] [Pattern        176] Golden answer:    -3345327, Your answer:    -1747239
+[ERROR] [Pattern        177] Golden answer:     -625444, Your answer:      644509
+[ERROR] [Pattern        178] Golden answer:     -355895, Your answer:    -2416899
+[ERROR] [Pattern        179] Golden answer:     -528175, Your answer:     2704476
+[ERROR] [Pattern        180] Golden answer:     1705603, Your answer:     1692462
+[ERROR] [Pattern        181] Golden answer:    -1183677, Your answer:    -2230250
+[ERROR] [Pattern        182] Golden answer:     5395015, Your answer:     3738245
+[ERROR] [Pattern        183] Golden answer:    -2486083, Your answer:    -1087480
+[ERROR] [Pattern        184] Golden answer:      509913, Your answer:    -1515589
+[ERROR] [Pattern        185] Golden answer:     -567177, Your answer:     -960688
+[ERROR] [Pattern        186] Golden answer:    -1260829, Your answer:     -507499
+[ERROR] [Pattern        187] Golden answer:     2400959, Your answer:     2129878
+[ERROR] [Pattern        188] Golden answer:    -1929297, Your answer:      180654
+[ERROR] [Pattern        189] Golden answer:    -1715124, Your answer:    -2373220
+[ERROR] [Pattern        190] Golden answer:     4671478, Your answer:     5790223
+[ERROR] [Pattern        191] Golden answer:    -3819242, Your answer:    -2846471
+[ERROR] [Pattern        192] Golden answer:     3498423, Your answer:      981409
+[ERROR] [Pattern        193] Golden answer:    -1674998, Your answer:     1621765
+[ERROR] [Pattern        194] Golden answer:    -1150115, Your answer:    -2718405
+[ERROR] [Pattern        195] Golden answer:     -485043, Your answer:    -1073431
+[ERROR] [Pattern        196] Golden answer:    -1431732, Your answer:     -645578
+[ERROR] [Pattern        197] Golden answer:      -24047, Your answer:     -829259
+[ERROR] [Pattern        198] Golden answer:     -923027, Your answer:     -712925
+[ERROR] [Pattern        199] Golden answer:    -1205431, Your answer:    -1316011
+[ERROR] [Pattern        329] Golden answer:      969772, Your answer:     1358178
+[ERROR] [Pattern        330] Golden answer:     -681597, Your answer:    -1901952
+[ERROR] [Pattern        331] Golden answer:     3196423, Your answer:     5228722
+[ERROR] [Pattern        332] Golden answer:     2696595, Your answer:     1423293
+[ERROR] [Pattern        333] Golden answer:      442313, Your answer:     1804364
+[ERROR] [Pattern        334] Golden answer:     3958503, Your answer:     1745863
+[ERROR] [Pattern        335] Golden answer:      800775, Your answer:     2594576
+[ERROR] [Pattern        336] Golden answer:      679660, Your answer:     1246166
+[ERROR] [Pattern        337] Golden answer:     2421076, Your answer:     -238789
+[ERROR] [Pattern        338] Golden answer:    -2614320, Your answer:      111519
+[ERROR] [Pattern        339] Golden answer:      780575, Your answer:    -3598740
+[ERROR] [Pattern        340] Golden answer:    -2406999, Your answer:      877395
+[ERROR] [Pattern        341] Golden answer:     2748040, Your answer:    -1077358
+[ERROR] [Pattern        342] Golden answer:    -1984268, Your answer:     -864184
+[ERROR] [Pattern        343] Golden answer:    -1184480, Your answer:     -843243
+[ERROR] [Pattern        344] Golden answer:      228884, Your answer:    -1248329
+[ERROR] [Pattern        345] Golden answer:      645259, Your answer:      602977
+[ERROR] [Pattern        346] Golden answer:     2726730, Your answer:     1413597
+[ERROR] [Pattern        347] Golden answer:    -3705784, Your answer:    -2877485
+[ERROR] [Pattern        348] Golden answer:      964859, Your answer:     2741337
+[ERROR] [Pattern        349] Golden answer:     3889083, Your answer:      756127
+[ERROR] [Pattern        350] Golden answer:    -3672898, Your answer:    -2985234
+[ERROR] [Pattern        351] Golden answer:     2073738, Your answer:     2734610
+[ERROR] [Pattern        352] Golden answer:    -2489266, Your answer:    -2123464
+[ERROR] [Pattern        353] Golden answer:      230050, Your answer:     -202335
+[ERROR] [Pattern        354] Golden answer:    -1611933, Your answer:    -1110670
+[ERROR] [Pattern        355] Golden answer:    -5224963, Your answer:    -2796568
+[ERROR] [Pattern        356] Golden answer:     2349468, Your answer:    -1375608
+[ERROR] [Pattern        357] Golden answer:    -4059797, Your answer:     -995951
+[ERROR] [Pattern        358] Golden answer:     3255301, Your answer:     1227588
+[ERROR] [Pattern        359] Golden answer:     -703488, Your answer:    -1136031
+[ERROR] [Pattern        360] Golden answer:    -2926581, Your answer:    -2566263
+[ERROR] [Pattern        361] Golden answer:     1580479, Your answer:    -1656679
+[ERROR] [Pattern        362] Golden answer:    -1981122, Your answer:     1779813
+[ERROR] [Pattern        363] Golden answer:      102107, Your answer:    -2101439
+[ERROR] [Pattern        364] Golden answer:      730370, Your answer:     -619674
+[ERROR] [Pattern        365] Golden answer:    -2536056, Your answer:     1046925
+[ERROR] [Pattern        366] Golden answer:     4109027, Your answer:     -373579
+[ERROR] [Pattern        367] Golden answer:    -5237343, Your answer:     -652189
+[ERROR] [Pattern        368] Golden answer:     1511713, Your answer:     -527906
+[ERROR] [Pattern        369] Golden answer:    -2391299, Your answer:      394443
+[ERROR] [Pattern        370] Golden answer:     -192724, Your answer:    -2212059
+[ERROR] [Pattern        371] Golden answer:    -1700702, Your answer:     1559419
+[ERROR] [Pattern        372] Golden answer:     -127065, Your answer:    -3394044
+[ERROR] [Pattern        373] Golden answer:     -268088, Your answer:      599271
+[ERROR] [Pattern        374] Golden answer:     -485557, Your answer:     -867506
+[ERROR] [Pattern        375] Golden answer:     2514221, Your answer:     2724861
+[ERROR] [Pattern        376] Golden answer:     -360236, Your answer:     3213938
+[ERROR] [Pattern        377] Golden answer:      329588, Your answer:       80219
+[ERROR] [Pattern        378] Golden answer:      154593, Your answer:    -1230062
+[ERROR] [Pattern        379] Golden answer:      776014, Your answer:     2456904
+[ERROR] [Pattern        380] Golden answer:      648098, Your answer:     4618366
+[ERROR] [Pattern        381] Golden answer:     1263999, Your answer:    -1479056
+[ERROR] [Pattern        382] Golden answer:      417412, Your answer:      332967
+[ERROR] [Pattern        383] Golden answer:     1935727, Your answer:     1186894
+[ERROR] [Pattern        384] Golden answer:    -4121020, Your answer:    -2613503
+[ERROR] [Pattern        385] Golden answer:      915291, Your answer:    -4007778
+[ERROR] [Pattern        386] Golden answer:    -1436405, Your answer:     -812637
+[ERROR] [Pattern        387] Golden answer:    -3551927, Your answer:    -1841394
+[ERROR] [Pattern        388] Golden answer:      172218, Your answer:      360851
+[ERROR] [Pattern        389] Golden answer:      845541, Your answer:    -4655827
+[ERROR] [Pattern        390] Golden answer:    -1748917, Your answer:     4192656
+[ERROR] [Pattern        391] Golden answer:     1100662, Your answer:      786402
+[ERROR] [Pattern        392] Golden answer:     1260238, Your answer:     2470906
+[ERROR] [Pattern        393] Golden answer:     4865690, Your answer:     1971045
+[ERROR] [Pattern        394] Golden answer:    -1665477, Your answer:     3555220
+[ERROR] [Pattern        395] Golden answer:     2357849, Your answer:      437224
+[ERROR] [Pattern        396] Golden answer:     1078162, Your answer:     -912243
+[ERROR] [Pattern        397] Golden answer:    -2078686, Your answer:     -984050
+[ERROR] [Pattern        398] Golden answer:    -2026619, Your answer:    -1423852
+------End the data input(AXI-Stream)------
+[ERROR] [Pattern        399] Golden answer:     -872252, Your answer:     -402786
+--------Simulation Failed---------
+$finish called at time : 236305 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7882.195 ; gain = 5.000 ; free physical = 3738 ; free virtual = 7958
+add_files -norecurse /home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+---------------------------------------------
+-----------Congratulations! Pass-------------
+$finish called at time : 237485 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7930.223 ; gain = 0.000 ; free physical = 3707 ; free virtual = 7927
+set_property is_enabled true [get_files  /home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v]
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+----Start the first dataset coefficient input(AXI-lite)----
+----Start the first dataset input(AXI-Stream),(1delay cycle for input)----
+ Check Coefficient ...
+OK: exp =           9, rdata =           9
+OK: exp =           7, rdata =           7
+OK: exp =           9, rdata =           9
+OK: exp =          10, rdata =          10
+OK: exp =           2, rdata =           2
+OK: exp =           9, rdata =           9
+OK: exp =          -6, rdata =          -6
+OK: exp =          -3, rdata =          -3
+OK: exp =           9, rdata =           9
+OK: exp =           1, rdata =           1
+OK: exp =          -6, rdata =          -6
+OK: exp =           3, rdata =           3
+OK: exp =          -9, rdata =          -9
+OK: exp =         -10, rdata =         -10
+OK: exp =          -1, rdata =          -1
+ Start first dataset FIR
+-----End the first dataset input(AXI-Stream)-----
+-----Start the second dataset input(AXI-Stream),(20 delay cycle for input)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----END the first dataset fir ----
+----Start the second ap_start ----
+----invalid write data_len ----
+----valid read data_len, the gold read should same as above valid setting.  ----
+OK: exp =         400, rdata =         400
+----invalid read coef, don't check the answer.  ----
+OK: exp =          -1, rdata =          -1
+-----End the second dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----Start the third dataset coefficient input(AXI-lite)----
+-----Start the third dataset input(AXI-Stream),(0 delay cycle for input)----
+----Start the third ap_start ----
+-----End the third dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+---------------------------------------------
+-----------Congratulations! Pass-------------
+-------------------third dataset complete cycle count        9327(to know best case throuput) ---------------------
+$finish called at time : 306495 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" Line 344
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 7951.230 ; gain = 5.000 ; free physical = 3644 ; free virtual = 7891
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+----Start the first dataset coefficient input(AXI-lite)----
+----Start the first dataset input(AXI-Stream),(1delay cycle for input)----
+ Check Coefficient ...
+OK: exp =           9, rdata =           9
+OK: exp =           7, rdata =           7
+OK: exp =           9, rdata =           9
+OK: exp =          10, rdata =          10
+OK: exp =           2, rdata =           2
+OK: exp =           9, rdata =           9
+OK: exp =          -6, rdata =          -6
+OK: exp =          -3, rdata =          -3
+OK: exp =           9, rdata =           9
+OK: exp =           1, rdata =           1
+OK: exp =          -6, rdata =          -6
+OK: exp =           3, rdata =           3
+OK: exp =          -9, rdata =          -9
+OK: exp =         -10, rdata =         -10
+OK: exp =          -1, rdata =          -1
+ Start first dataset FIR
+-----End the first dataset input(AXI-Stream)-----
+-----Start the second dataset input(AXI-Stream),(20 delay cycle for input)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----END the first dataset fir ----
+----Start the second ap_start ----
+----invalid write data_len ----
+----valid read data_len, the gold read should same as above valid setting.  ----
+OK: exp =         400, rdata =         400
+----invalid read coef, don't check the answer.  ----
+OK: exp =          -1, rdata =          -1
+-----End the second dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----Start the third dataset coefficient input(AXI-lite)----
+-----Start the third dataset input(AXI-Stream),(0 delay cycle for input)----
+----Start the third ap_start ----
+-----End the third dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+---------------------------------------------
+-----------Congratulations! Pass-------------
+-------------------third dataset complete cycle count        9327(to know best case throuput) ---------------------
+$finish called at time : 306495 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" Line 344
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7972.242 ; gain = 5.000 ; free physical = 3577 ; free virtual = 7824
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 7972.242 ; gain = 5.000 ; free physical = 3577 ; free virtual = 7824
+set_property is_enabled false [get_files  /home/ubuntu/2025_implementation_project/lab03/hdl/fir_0403.v]
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  /home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v]
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+[ERROR] [Pattern         10] Golden answer:      423498, Your answer:      -88014
+[ERROR] [Pattern         13] Golden answer:        4069, Your answer:      354043
+[ERROR] [Pattern         14] Golden answer:      417117, Your answer:      559701
+[ERROR] [Pattern         15] Golden answer:       -5050, Your answer:       68480
+[ERROR] [Pattern         16] Golden answer:       20628, Your answer:      483036
+[ERROR] [Pattern         17] Golden answer:    -2240164, Your answer:    -2105290
+[ERROR] [Pattern         18] Golden answer:     1249427, Your answer:     1427687
+[ERROR] [Pattern         20] Golden answer:    -1086398, Your answer:     -850076
+[ERROR] [Pattern         21] Golden answer:    -1779776, Your answer:    -2210264
+[ERROR] [Pattern         22] Golden answer:     1561033, Your answer:     1452319
+[ERROR] [Pattern         23] Golden answer:      867924, Your answer:     1250106
+[ERROR] [Pattern         24] Golden answer:     1652775, Your answer:     2149491
+[ERROR] [Pattern         26] Golden answer:     2966889, Your answer:     3517863
+[ERROR] [Pattern         28] Golden answer:     -634770, Your answer:     -979578
+[ERROR] [Pattern         29] Golden answer:    -3199583, Your answer:    -3191351
+[ERROR] [Pattern         30] Golden answer:    -1187741, Your answer:     -887975
+[ERROR] [Pattern         31] Golden answer:    -3857169, Your answer:    -4447587
+[ERROR] [Pattern         32] Golden answer:     -727764, Your answer:     -452352
+[ERROR] [Pattern         33] Golden answer:      846012, Your answer:     1278780
+[ERROR] [Pattern         34] Golden answer:     3721297, Your answer:     4300267
+[ERROR] [Pattern         35] Golden answer:     1210730, Your answer:      886340
+[ERROR] [Pattern         36] Golden answer:     2025942, Your answer:     2077044
+[ERROR] [Pattern         37] Golden answer:     -366110, Your answer:     -773738
+[ERROR] [Pattern         40] Golden answer:     -176881, Your answer:      175955
+[ERROR] [Pattern         41] Golden answer:    -3330156, Your answer:    -3624930
+[ERROR] [Pattern         44] Golden answer:     -197879, Your answer:      315625
+[ERROR] [Pattern         45] Golden answer:     1646226, Your answer:     1298334
+[ERROR] [Pattern         46] Golden answer:      311425, Your answer:      185773
+[ERROR] [Pattern         47] Golden answer:     1080558, Your answer:     1183632
+[ERROR] [Pattern         48] Golden answer:    -3322424, Your answer:    -3144704
+[ERROR] [Pattern         49] Golden answer:    -1401694, Your answer:    -1219594
+[ERROR] [Pattern         50] Golden answer:      704102, Your answer:     1301378
+[ERROR] [Pattern         51] Golden answer:     -799123, Your answer:    -1239271
+[ERROR] [Pattern         53] Golden answer:     1601140, Your answer:     1011748
+[ERROR] [Pattern         54] Golden answer:      860380, Your answer:     1454398
+[ERROR] [Pattern         56] Golden answer:    -1830816, Your answer:    -2018508
+[ERROR] [Pattern         57] Golden answer:     3155744, Your answer:     3588488
+[ERROR] [Pattern         58] Golden answer:    -4249595, Your answer:    -4567523
+[ERROR] [Pattern         59] Golden answer:     1394630, Your answer:     1311668
+[ERROR] [Pattern         60] Golden answer:      517415, Your answer:      751703
+[ERROR] [Pattern         62] Golden answer:    -1259228, Your answer:    -1243736
+[ERROR] [Pattern         63] Golden answer:     1881156, Your answer:     2245722
+[ERROR] [Pattern         64] Golden answer:    -2015006, Your answer:    -2375546
+[ERROR] [Pattern         68] Golden answer:     -774327, Your answer:     -650343
+[ERROR] [Pattern         71] Golden answer:      849243, Your answer:      341565
+[ERROR] [Pattern         74] Golden answer:     -668445, Your answer:     -877557
+[ERROR] [Pattern         75] Golden answer:    -2304459, Your answer:    -2071839
+[ERROR] [Pattern         76] Golden answer:      884232, Your answer:      615018
+[ERROR] [Pattern         77] Golden answer:    -1694770, Your answer:    -2084728
+[ERROR] [Pattern         79] Golden answer:     -561708, Your answer:    -1045692
+[ERROR] [Pattern         82] Golden answer:    -1412532, Your answer:    -1641696
+[ERROR] [Pattern         84] Golden answer:        1564, Your answer:      172360
+[ERROR] [Pattern         86] Golden answer:    -2097732, Your answer:    -1509060
+[ERROR] [Pattern         87] Golden answer:      472936, Your answer:      572752
+[ERROR] [Pattern         88] Golden answer:    -3377319, Your answer:    -3829365
+[ERROR] [Pattern         90] Golden answer:    -2275720, Your answer:    -2846362
+[ERROR] [Pattern         92] Golden answer:    -2747465, Your answer:    -3114617
+[ERROR] [Pattern         93] Golden answer:     1866074, Your answer:     2344466
+[ERROR] [Pattern         94] Golden answer:      104482, Your answer:     -470720
+[ERROR] [Pattern         95] Golden answer:     3302608, Your answer:     3779950
+[ERROR] [Pattern         96] Golden answer:    -3314574, Your answer:    -3798564
+[ERROR] [Pattern         98] Golden answer:    -2349315, Your answer:    -2745669
+[ERROR] [Pattern         99] Golden answer:    -1122545, Your answer:     -787043
+[ERROR] [Pattern        101] Golden answer:    -3846027, Your answer:    -4207209
+[ERROR] [Pattern        102] Golden answer:     2752146, Your answer:     3066432
+[ERROR] [Pattern        103] Golden answer:     -177752, Your answer:      299410
+[ERROR] [Pattern        104] Golden answer:     -333058, Your answer:     -318514
+[ERROR] [Pattern        105] Golden answer:     4020621, Your answer:     4616775
+[ERROR] [Pattern        106] Golden answer:    -1252369, Your answer:    -1682557
+[ERROR] [Pattern        108] Golden answer:     2419747, Your answer:     1850671
+[ERROR] [Pattern        110] Golden answer:     2276971, Your answer:     2527987
+[ERROR] [Pattern        111] Golden answer:    -2880638, Your answer:    -2312006
+[ERROR] [Pattern        112] Golden answer:     2928942, Your answer:     3360306
+[ERROR] [Pattern        113] Golden answer:      726100, Your answer:     1050526
+[ERROR] [Pattern        114] Golden answer:    -2539840, Your answer:    -2366698
+[ERROR] [Pattern        115] Golden answer:      -49929, Your answer:     -569829
+[ERROR] [Pattern        116] Golden answer:      -11552, Your answer:     -502934
+[ERROR] [Pattern        117] Golden answer:    -2570051, Your answer:    -1977137
+[ERROR] [Pattern        118] Golden answer:    -1509194, Your answer:    -1847456
+[ERROR] [Pattern        119] Golden answer:    -1397435, Your answer:    -1623593
+[ERROR] [Pattern        120] Golden answer:     5397167, Your answer:     5790731
+[ERROR] [Pattern        121] Golden answer:    -2484312, Your answer:    -3045774
+[ERROR] [Pattern        122] Golden answer:     8202139, Your answer:     8711629
+[ERROR] [Pattern        123] Golden answer:    -2239474, Your answer:    -2796244
+[ERROR] [Pattern        124] Golden answer:     2954344, Your answer:     2360368
+[ERROR] [Pattern        125] Golden answer:    -1660827, Your answer:    -1390371
+[ERROR] [Pattern        127] Golden answer:     1722905, Your answer:     1708787
+[ERROR] [Pattern        128] Golden answer:    -5005218, Your answer:    -4956576
+[ERROR] [Pattern        129] Golden answer:     -796473, Your answer:     -942483
+[ERROR] [Pattern        133] Golden answer:    -1425761, Your answer:    -1983881
+[ERROR] [Pattern        135] Golden answer:    -1390327, Your answer:    -1489681
+[ERROR] [Pattern        137] Golden answer:      259853, Your answer:      457091
+[ERROR] [Pattern        139] Golden answer:     1182109, Your answer:     1708261
+[ERROR] [Pattern        142] Golden answer:     2163432, Your answer:     2443632
+[ERROR] [Pattern        144] Golden answer:     5266576, Your answer:     5710438
+[ERROR] [Pattern        145] Golden answer:    -4155190, Your answer:    -4654810
+[ERROR] [Pattern        147] Golden answer:     4291030, Your answer:     4190386
+[ERROR] [Pattern        148] Golden answer:    -1189974, Your answer:    -1348290
+[ERROR] [Pattern        149] Golden answer:     1773391, Your answer:     1340395
+[ERROR] [Pattern        150] Golden answer:    -3963428, Your answer:    -4314584
+[ERROR] [Pattern        151] Golden answer:     -398367, Your answer:     -604005
+[ERROR] [Pattern        153] Golden answer:    -3044917, Your answer:    -3327199
+[ERROR] [Pattern        154] Golden answer:    -1292405, Your answer:    -1832699
+[ERROR] [Pattern        155] Golden answer:      777410, Your answer:     1057238
+[ERROR] [Pattern        157] Golden answer:     -555973, Your answer:    -1023739
+[ERROR] [Pattern        159] Golden answer:      986551, Your answer:      520651
+[ERROR] [Pattern        160] Golden answer:    -1587085, Your answer:     -998653
+[ERROR] [Pattern        170] Golden answer:    -2337885, Your answer:    -2047455
+[ERROR] [Pattern        171] Golden answer:     1842539, Your answer:     2066621
+[ERROR] [Pattern        172] Golden answer:    -3879394, Your answer:    -4335832
+[ERROR] [Pattern        175] Golden answer:      974529, Your answer:      705783
+[ERROR] [Pattern        176] Golden answer:    -3345327, Your answer:    -3454071
+[ERROR] [Pattern        179] Golden answer:     -528175, Your answer:     -439135
+[ERROR] [Pattern        180] Golden answer:     1705603, Your answer:     1825861
+[ERROR] [Pattern        182] Golden answer:     5395015, Your answer:     5751901
+[ERROR] [Pattern        185] Golden answer:     -567177, Your answer:    -1045401
+[ERROR] [Pattern        186] Golden answer:    -1260829, Your answer:    -1403539
+[ERROR] [Pattern        188] Golden answer:    -1929297, Your answer:    -2298069
+[ERROR] [Pattern        190] Golden answer:     4671478, Your answer:     4954048
+[ERROR] [Pattern        192] Golden answer:     3498423, Your answer:     3382671
+[ERROR] [Pattern        193] Golden answer:    -1674998, Your answer:    -1347314
+[ERROR] [Pattern        194] Golden answer:    -1150115, Your answer:    -1393805
+[ERROR] [Pattern        195] Golden answer:     -485043, Your answer:     -554817
+[ERROR] [Pattern        196] Golden answer:    -1431732, Your answer:    -1773252
+[ERROR] [Pattern        197] Golden answer:      -24047, Your answer:     -529025
+[ERROR] [Pattern        198] Golden answer:     -923027, Your answer:     -874091
+[ERROR] [Pattern        199] Golden answer:    -1205431, Your answer:    -1184185
+[ERROR] [Pattern        200] Golden answer:     2154995, Your answer:     2311223
+[ERROR] [Pattern        201] Golden answer:     -760647, Your answer:     -367605
+[ERROR] [Pattern        202] Golden answer:     -914635, Your answer:     -475459
+[ERROR] [Pattern        203] Golden answer:     2289630, Your answer:     2614818
+[ERROR] [Pattern        204] Golden answer:      784838, Your answer:      944822
+[ERROR] [Pattern        205] Golden answer:    -4547906, Your answer:    -4388522
+[ERROR] [Pattern        206] Golden answer:      218567, Your answer:      713021
+[ERROR] [Pattern        208] Golden answer:    -2260149, Your answer:    -2775699
+[ERROR] [Pattern        210] Golden answer:      329186, Your answer:      351134
+[ERROR] [Pattern        211] Golden answer:     2552874, Your answer:     2733240
+[ERROR] [Pattern        212] Golden answer:     1195716, Your answer:     1703310
+[ERROR] [Pattern        213] Golden answer:    -1081879, Your answer:    -1015411
+[ERROR] [Pattern        214] Golden answer:     2710212, Your answer:     2534256
+[ERROR] [Pattern        217] Golden answer:    -2488433, Your answer:    -2739599
+[ERROR] [Pattern        219] Golden answer:     -480709, Your answer:     -963487
+[ERROR] [Pattern        220] Golden answer:     3030613, Your answer:     2702797
+[ERROR] [Pattern        221] Golden answer:     -500139, Your answer:     -445071
+[ERROR] [Pattern        222] Golden answer:     3690905, Your answer:     4148795
+[ERROR] [Pattern        223] Golden answer:     2226313, Your answer:     2105449
+[ERROR] [Pattern        224] Golden answer:     -238798, Your answer:     -553396
+[ERROR] [Pattern        227] Golden answer:     -589821, Your answer:     -807999
+[ERROR] [Pattern        228] Golden answer:    -2082510, Your answer:    -1995954
+[ERROR] [Pattern        229] Golden answer:      825178, Your answer:      849760
+[ERROR] [Pattern        230] Golden answer:    -2406735, Your answer:    -2940237
+[ERROR] [Pattern        233] Golden answer:     2864318, Your answer:     3316472
+[ERROR] [Pattern        234] Golden answer:    -3236876, Your answer:    -3825026
+[ERROR] [Pattern        235] Golden answer:      508232, Your answer:      721646
+[ERROR] [Pattern        236] Golden answer:    -1091048, Your answer:     -515414
+[ERROR] [Pattern        240] Golden answer:    -1113801, Your answer:    -1300371
+[ERROR] [Pattern        241] Golden answer:     3564574, Your answer:     3955672
+[ERROR] [Pattern        242] Golden answer:        2479, Your answer:     -125111
+[ERROR] [Pattern        243] Golden answer:      399376, Your answer:      649768
+[ERROR] [Pattern        244] Golden answer:    -1760222, Your answer:    -2230952
+[ERROR] [Pattern        245] Golden answer:     3219542, Your answer:     2694338
+[ERROR] [Pattern        246] Golden answer:     -927720, Your answer:    -1122168
+[ERROR] [Pattern        247] Golden answer:    -1823602, Your answer:    -1472530
+[ERROR] [Pattern        248] Golden answer:     -921207, Your answer:    -1491771
+[ERROR] [Pattern        249] Golden answer:     1357761, Your answer:     1704357
+[ERROR] [Pattern        250] Golden answer:    -1389726, Your answer:    -1307868
+[ERROR] [Pattern        252] Golden answer:      962722, Your answer:     1119436
+[ERROR] [Pattern        253] Golden answer:     -907241, Your answer:    -1263821
+[ERROR] [Pattern        254] Golden answer:     1259461, Your answer:      795523
+[ERROR] [Pattern        256] Golden answer:     3264352, Your answer:     3586954
+[ERROR] [Pattern        257] Golden answer:    -1993527, Your answer:    -2071767
+[ERROR] [Pattern        258] Golden answer:     3702541, Your answer:     4274167
+[ERROR] [Pattern        260] Golden answer:     5456646, Your answer:     5863518
+[ERROR] [Pattern        262] Golden answer:     -207732, Your answer:     -571164
+[ERROR] [Pattern        263] Golden answer:     -522858, Your answer:      -21936
+[ERROR] [Pattern        264] Golden answer:    -2633692, Your answer:    -3151276
+[ERROR] [Pattern        266] Golden answer:    -1606862, Your answer:    -1315832
+[ERROR] [Pattern        267] Golden answer:    -1147174, Your answer:     -960892
+[ERROR] [Pattern        269] Golden answer:      431881, Your answer:      124663
+[ERROR] [Pattern        271] Golden answer:     2127843, Your answer:     2563515
+[ERROR] [Pattern        272] Golden answer:    -3401795, Your answer:    -3093083
+[ERROR] [Pattern        273] Golden answer:     1945077, Your answer:     2248347
+[ERROR] [Pattern        275] Golden answer:     -738426, Your answer:     -372630
+[ERROR] [Pattern        277] Golden answer:      802902, Your answer:     1132056
+[ERROR] [Pattern        278] Golden answer:    -1973025, Your answer:    -2385759
+[ERROR] [Pattern        279] Golden answer:     1759601, Your answer:     1967885
+[ERROR] [Pattern        281] Golden answer:      606665, Your answer:      712427
+[ERROR] [Pattern        282] Golden answer:     -803301, Your answer:     -896109
+[ERROR] [Pattern        283] Golden answer:     2141095, Your answer:     2625811
+[ERROR] [Pattern        285] Golden answer:     1832331, Your answer:     2174403
+[ERROR] [Pattern        286] Golden answer:    -2246592, Your answer:    -2156880
+[ERROR] [Pattern        288] Golden answer:     -793665, Your answer:     -222177
+[ERROR] [Pattern        289] Golden answer:    -3027897, Your answer:    -3437031
+[ERROR] [Pattern        290] Golden answer:     1955968, Your answer:     2345032
+[ERROR] [Pattern        292] Golden answer:     3697371, Your answer:     3289653
+[ERROR] [Pattern        294] Golden answer:     1227172, Your answer:     1582636
+[ERROR] [Pattern        295] Golden answer:      928857, Your answer:     1146885
+[ERROR] [Pattern        296] Golden answer:     3997052, Your answer:     4369034
+[ERROR] [Pattern        299] Golden answer:    -1123618, Your answer:    -1536748
+[ERROR] [Pattern        301] Golden answer:    -1416058, Your answer:     -983092
+[ERROR] [Pattern        303] Golden answer:       -1207, Your answer:     -166315
+[ERROR] [Pattern        307] Golden answer:     2569208, Your answer:     2771300
+[ERROR] [Pattern        308] Golden answer:     -403750, Your answer:     -597544
+[ERROR] [Pattern        309] Golden answer:      571982, Your answer:     1106846
+[ERROR] [Pattern        310] Golden answer:      560053, Your answer:     1009387
+[ERROR] [Pattern        312] Golden answer:     -746909, Your answer:     -618887
+[ERROR] [Pattern        313] Golden answer:    -1447465, Your answer:    -1097473
+[ERROR] [Pattern        317] Golden answer:     3238798, Your answer:     2802472
+[ERROR] [Pattern        319] Golden answer:     -781369, Your answer:     -593887
+[ERROR] [Pattern        320] Golden answer:     2858023, Your answer:     2610763
+[ERROR] [Pattern        321] Golden answer:      949457, Your answer:      827693
+[ERROR] [Pattern        322] Golden answer:     1235090, Your answer:     1549448
+[ERROR] [Pattern        325] Golden answer:    -4514040, Your answer:    -4467948
+[ERROR] [Pattern        326] Golden answer:    -1385130, Your answer:    -1370508
+[ERROR] [Pattern        327] Golden answer:     1024169, Your answer:     1227401
+[ERROR] [Pattern        328] Golden answer:    -1698883, Your answer:    -1746007
+[ERROR] [Pattern        330] Golden answer:     -681597, Your answer:    -1043415
+[ERROR] [Pattern        331] Golden answer:     3196423, Your answer:     3246907
+[ERROR] [Pattern        332] Golden answer:     2696595, Your answer:     3235221
+[ERROR] [Pattern        333] Golden answer:      442313, Your answer:      -43231
+[ERROR] [Pattern        335] Golden answer:      800775, Your answer:      571209
+[ERROR] [Pattern        336] Golden answer:      679660, Your answer:      986986
+[ERROR] [Pattern        337] Golden answer:     2421076, Your answer:     2115274
+[ERROR] [Pattern        338] Golden answer:    -2614320, Your answer:    -3209634
+[ERROR] [Pattern        340] Golden answer:    -2406999, Your answer:    -3003501
+[ERROR] [Pattern        342] Golden answer:    -1984268, Your answer:    -2359742
+[ERROR] [Pattern        343] Golden answer:    -1184480, Your answer:    -1594592
+[ERROR] [Pattern        344] Golden answer:      228884, Your answer:     -139540
+[ERROR] [Pattern        345] Golden answer:      645259, Your answer:      109159
+[ERROR] [Pattern        346] Golden answer:     2726730, Your answer:     2385672
+[ERROR] [Pattern        348] Golden answer:      964859, Your answer:     1383347
+[ERROR] [Pattern        349] Golden answer:     3889083, Your answer:     3861039
+[ERROR] [Pattern        350] Golden answer:    -3672898, Your answer:    -4175896
+[ERROR] [Pattern        351] Golden answer:     2073738, Your answer:     1700040
+[ERROR] [Pattern        353] Golden answer:      230050, Your answer:      630796
+[ERROR] [Pattern        354] Golden answer:    -1611933, Your answer:    -1463889
+[ERROR] [Pattern        356] Golden answer:     2349468, Your answer:     2916528
+[ERROR] [Pattern        359] Golden answer:     -703488, Your answer:     -556320
+[ERROR] [Pattern        360] Golden answer:    -2926581, Your answer:    -2919459
+[ERROR] [Pattern        361] Golden answer:     1580479, Your answer:     1794559
+[ERROR] [Pattern        362] Golden answer:    -1981122, Your answer:    -1700496
+[ERROR] [Pattern        363] Golden answer:      102107, Your answer:     -232507
+[ERROR] [Pattern        364] Golden answer:      730370, Your answer:      644984
+[ERROR] [Pattern        365] Golden answer:    -2536056, Your answer:    -3079938
+[ERROR] [Pattern        366] Golden answer:     4109027, Your answer:     4665989
+[ERROR] [Pattern        367] Golden answer:    -5237343, Your answer:    -5810727
+[ERROR] [Pattern        368] Golden answer:     1511713, Your answer:     1513417
+[ERROR] [Pattern        369] Golden answer:    -2391299, Your answer:    -2379269
+[ERROR] [Pattern        370] Golden answer:     -192724, Your answer:     -322126
+[ERROR] [Pattern        371] Golden answer:    -1700702, Your answer:    -1865702
+[ERROR] [Pattern        372] Golden answer:     -127065, Your answer:      459717
+[ERROR] [Pattern        373] Golden answer:     -268088, Your answer:      -17522
+[ERROR] [Pattern        374] Golden answer:     -485557, Your answer:     -522049
+[ERROR] [Pattern        375] Golden answer:     2514221, Your answer:     2461451
+[ERROR] [Pattern        376] Golden answer:     -360236, Your answer:     -308450
+[ERROR] [Pattern        377] Golden answer:      329588, Your answer:      -35266
+[ERROR] [Pattern        378] Golden answer:      154593, Your answer:      -47265
+[ERROR] [Pattern        379] Golden answer:      776014, Your answer:      888484
+[ERROR] [Pattern        381] Golden answer:     1263999, Your answer:     1087737
+[ERROR] [Pattern        382] Golden answer:      417412, Your answer:      277174
+[ERROR] [Pattern        383] Golden answer:     1935727, Your answer:     2329003
+[ERROR] [Pattern        384] Golden answer:    -4121020, Your answer:    -3549190
+[ERROR] [Pattern        385] Golden answer:      915291, Your answer:     1027947
+[ERROR] [Pattern        386] Golden answer:    -1436405, Your answer:    -1092443
+[ERROR] [Pattern        387] Golden answer:    -3551927, Your answer:    -3182963
+[ERROR] [Pattern        389] Golden answer:      845541, Your answer:      472803
+[ERROR] [Pattern        390] Golden answer:    -1748917, Your answer:    -1282645
+[ERROR] [Pattern        392] Golden answer:     1260238, Your answer:      950518
+[ERROR] [Pattern        393] Golden answer:     4865690, Your answer:     5183516
+[ERROR] [Pattern        394] Golden answer:    -1665477, Your answer:    -1354401
+[ERROR] [Pattern        395] Golden answer:     2357849, Your answer:     2501363
+[ERROR] [Pattern        396] Golden answer:     1078162, Your answer:      979840
+------End the data input(AXI-Stream)------
+[ERROR] [Pattern        398] Golden answer:    -2026619, Your answer:    -1746851
+[ERROR] [Pattern        399] Golden answer:     -872252, Your answer:    -1373252
+--------Simulation Failed---------
+$finish called at time : 237415 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8020.270 ; gain = 0.000 ; free physical = 3582 ; free virtual = 7812
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+[ERROR] [Pattern        399] Golden answer:     -872252, Your answer:     -162763
+--------Simulation Failed---------
+$finish called at time : 236475 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8060.285 ; gain = 5.000 ; free physical = 3550 ; free virtual = 7788
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+current_wave_config {data_calculation.wcfg}
+/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+add_wave {{/fir_tb/fir_DUT/ff_valid}} {{/fir_tb/fir_DUT/x_ready}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 12. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+---------------------------------------------
+-----------Congratulations! Pass-------------
+$finish called at time : 236525 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8078.297 ; gain = 0.000 ; free physical = 3532 ; free virtual = 7771
+set_property is_enabled true [get_files  /home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v]
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 13. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 13. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+----Start the first dataset coefficient input(AXI-lite)----
+----Start the first dataset input(AXI-Stream),(1delay cycle for input)----
+ Check Coefficient ...
+OK: exp =           9, rdata =           9
+OK: exp =           7, rdata =           7
+OK: exp =           9, rdata =           9
+OK: exp =          10, rdata =          10
+OK: exp =           2, rdata =           2
+OK: exp =           9, rdata =           9
+OK: exp =          -6, rdata =          -6
+OK: exp =          -3, rdata =          -3
+OK: exp =           9, rdata =           9
+OK: exp =           1, rdata =           1
+OK: exp =          -6, rdata =          -6
+OK: exp =           3, rdata =           3
+OK: exp =          -9, rdata =          -9
+OK: exp =         -10, rdata =         -10
+OK: exp =          -1, rdata =          -1
+ Start first dataset FIR
+-----End the first dataset input(AXI-Stream)-----
+-----Start the second dataset input(AXI-Stream),(20 delay cycle for input)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----END the first dataset fir ----
+----Start the second ap_start ----
+----invalid write data_len ----
+----valid read data_len, the gold read should same as above valid setting.  ----
+OK: exp =         400, rdata =         400
+----invalid read coef, don't check the answer.  ----
+OK: exp =          -1, rdata =          -1
+-----End the second dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----Start the third dataset coefficient input(AXI-lite)----
+-----Start the third dataset input(AXI-Stream),(0 delay cycle for input)----
+----Start the third ap_start ----
+-----End the third dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+---------------------------------------------
+-----------Congratulations! Pass-------------
+-------------------third dataset complete cycle count        9327(to know best case throuput) ---------------------
+$finish called at time : 306495 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" Line 344
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 8238.375 ; gain = 0.000 ; free physical = 3496 ; free virtual = 7747
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 17 11:11:36 2025...

@@ -1,0 +1,1128 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Mar  5 07:38:18 2025
+# Process ID: 23024
+# Current directory: /home/ubuntu/2025_implementation_project/lab03/sim
+# Command line: vivado
+# Log file: /home/ubuntu/2025_implementation_project/lab03/sim/vivado.log
+# Journal file: /home/ubuntu/2025_implementation_project/lab03/sim/vivado.jou
+# Running On: ubuntu2004, OS: Linux, CPU Frequency: 2591.998 MHz, CPU Physical cores: 2, Host memory: 10425 MB
+#-----------------------------------------------------------
+start_gui
+create_project fir_vvd /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd -part xc7z020clg400-1
+add_files -norecurse {/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v /home/ubuntu/2025_implementation_project/lab03/hdl/fir.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/ubuntu/2025_implementation_project/lab03/sim/tb.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top fir [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+pwd
+launch_simulation
+launch_simulation
+launch_simulation
+source fir_tb.tcl
+pwd
+close_sim
+launch_simulation
+source fir_tb.tcl
+current_wave_config {Untitled 2}
+add_wave {{/fir_tb/tap_RAM}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg
+set_property xsim.view /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg}
+set_property -name {xsim.simulate.runtime} -value {70000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg}
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+add_files -fileset sim_1 -norecurse /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+set_property xsim.view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} [get_filesets sim_1]
+export_ip_user_files -of_objects  [get_files /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+current_wave_config {axi_stream.wcfg}
+add_wave {{/fir_tb/data_RAM/WE}} {{/fir_tb/data_RAM/EN}} {{/fir_tb/data_RAM/Di}} {{/fir_tb/data_RAM/Do}} {{/fir_tb/data_RAM/A}} {{/fir_tb/data_RAM/RAM}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+current_wave_config {axi_lite.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_len}} {{/fir_tb/fir_DUT/h_len}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+current_wave_config {axi_stream.wcfg}
+add_wave {{/fir_tb/fir_DUT/init_addr}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+current_wave_config {axi_stream.wcfg}
+add_wave {{/fir_tb/fir_DUT/ap}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+pwd
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+current_wave_config {axi_stream.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_cnt}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+current_wave_config {axi_stream.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_init}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+current_wave_config {axi_stream.wcfg}
+add_wave {{/fir_tb/fir_DUT/h_cnfg}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+source fir_tb.tcl
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+add_files -fileset sim_1 -norecurse /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+set_property xsim.view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_tb_behav.wcfg /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/ap}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/run}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/i}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/t}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_d}} {{/fir_tb/fir_DUT/x_q}} {{/fir_tb/fir_DUT/h_d}} {{/fir_tb/fir_DUT/h_q}} {{/fir_tb/fir_DUT/m_d}} {{/fir_tb/fir_DUT/m_q}} {{/fir_tb/fir_DUT/y_d}} {{/fir_tb/fir_DUT/y_q}} {{/fir_tb/fir_DUT/pipeline_stage}} {{/fir_tb/fir_DUT/y_done}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/fir_en}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_full}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_last}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/h_addr}} 
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/x_addr}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {10000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/x}} {{/fir_tb/fir_DUT/h}} {{/fir_tb/fir_DUT/m}} {{/fir_tb/fir_DUT/y}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/data_ff}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {15000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {150000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/fir_en_d}} {{/fir_tb/fir_DUT/fir_en_q}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/y_cnt}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {10000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {150000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/m_l}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+set_property -name {xsim.simulate.runtime} -value {200000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {300000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+current_wave_config {data_calculation.wcfg}
+add_wave {{/fir_tb/fir_DUT/sm_tlast}} 
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+set_property -name {xsim.simulate.runtime} -value {150000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {200000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+save_wave_config {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg}
+close_sim

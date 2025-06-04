@@ -1,0 +1,227 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sat Apr 19 10:27:28 2025
+# Process ID: 38371
+# Current directory: /home/ubuntu/2025_implementation_project/lab03/sim
+# Command line: vivado
+# Log file: /home/ubuntu/2025_implementation_project/lab03/sim/vivado.log
+# Journal file: /home/ubuntu/2025_implementation_project/lab03/sim/vivado.jou
+# Running On: ubuntu2004, OS: Linux, CPU Frequency: 2592.000 MHz, CPU Physical cores: 2, Host memory: 10425 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 28. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 28. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+----Start the first dataset coefficient input(AXI-lite)----
+----Start the first dataset input(AXI-Stream),(1delay cycle for input)----
+ Check Coefficient ...
+OK: exp =           9, rdata =           9
+OK: exp =           7, rdata =           7
+OK: exp =           9, rdata =           9
+OK: exp =          10, rdata =          10
+OK: exp =           2, rdata =           2
+OK: exp =           9, rdata =           9
+OK: exp =          -6, rdata =          -6
+OK: exp =          -3, rdata =          -3
+OK: exp =           9, rdata =           9
+OK: exp =           1, rdata =           1
+OK: exp =          -6, rdata =          -6
+OK: exp =           3, rdata =           3
+OK: exp =          -9, rdata =          -9
+OK: exp =         -10, rdata =         -10
+OK: exp =          -1, rdata =          -1
+ Start first dataset FIR
+-----End the first dataset input(AXI-Stream)-----
+-----Start the second dataset input(AXI-Stream),(20 delay cycle for input)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----END the first dataset fir ----
+----Start the second ap_start ----
+----invalid write data_len ----
+----valid read data_len, the gold read should same as above valid setting.  ----
+OK: exp =         400, rdata =         400
+----invalid read coef, don't check the answer.  ----
+OK: exp =          -1, rdata =          -1
+-----End the second dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+----Start the third dataset coefficient input(AXI-lite)----
+-----Start the third dataset input(AXI-Stream),(0 delay cycle for input)----
+----Start the third ap_start ----
+-----End the third dataset input(AXI-Stream)----
+-----------get ap_done------------
+-----------check ap_done clear------------
+OK: exp =           0, rdata =           4
+---------------------------------------------
+-----------Congratulations! Pass-------------
+-------------------third dataset complete cycle count        9327(to know best case throuput) ---------------------
+$finish called at time : 306495 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v" Line 344
+xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 7743.211 ; gain = 53.859 ; free physical = 2600 ; free virtual = 7794
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 7743.211 ; gain = 59.270 ; free physical = 2600 ; free virtual = 7794
+set_property is_enabled false [get_files  /home/ubuntu/2025_implementation_project/lab03/sim/tb_new.v]
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fir_tb'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fir_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj fir_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fir_tb_behav xil_defaultlib.fir_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 28. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v" Line 28. Module fir doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v" Line 3. Module bram32 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.bram32
+Compiling module xil_defaultlib.fir_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fir_tb_behav -key {Behavioral:sim_1:Functional:fir_tb} -tclbatch {fir_tb.tcl} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg} -view {/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_stream.wcfg
+WARNING: Simulation object /fir_tb/fir_DUT/ap was not found in the design.
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/axi_lite.wcfg
+open_wave_config /home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/data_calculation.wcfg
+source fir_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 400000ns
+------------Start simulation-----------
+----Start the data input(AXI-Stream)----
+----Start the coefficient input(AXI-lite)----
+ Check Coefficient ...
+ Tape programming done ...
+ Start FIR
+----End the coefficient input(AXI-lite)----
+------End the data input(AXI-Stream)------
+---------------------------------------------
+-----------Congratulations! Pass-------------
+$finish called at time : 236525 ns : File "/home/ubuntu/2025_implementation_project/lab03/sim/tb.v" Line 203
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fir_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 400000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 7763.199 ; gain = 10.008 ; free physical = 2566 ; free virtual = 7746

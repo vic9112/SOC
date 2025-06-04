@@ -1,0 +1,8 @@
+0.7
+2020.2
+Apr 18 2022
+15:53:03
+/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v,1745072814,verilog,,/home/ubuntu/2025_implementation_project/lab03/sim/tb.v,,fir,,,,,,,,
+/home/ubuntu/2025_implementation_project/lab03/sim/bram32.v,1740489704,verilog,,/home/ubuntu/2025_implementation_project/lab03/hdl/fir.v,,bram32,,,,,,,,
+/home/ubuntu/2025_implementation_project/lab03/sim/fir_vvd/fir_vvd.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
+/home/ubuntu/2025_implementation_project/lab03/sim/tb.v,1744899402,verilog,,,,fir_tb,,,,,,,,
