@@ -15,10 +15,13 @@
 
 #define N 64
 #define data_length N
-#define H 11
+//#define H 11
+#define H 12
+//#define H 15
+//#define H 32
 #define tap_length H
 
-int taps[11] = {0,-10,-9,23,56,63,56,23,-9,-10,0};
+int taps[32] = {4, -6, 9, -6, 7, -4, 3, 0, -7, 4, 2, -7, -7, -9, 1, 6, -8, 9, 8, 5, -9, 4, -8, -7, -7, -6, 3, -3, 2, 5, -9, 10};
 
 int outputsignal[N];
 

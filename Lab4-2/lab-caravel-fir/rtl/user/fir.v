@@ -1,3 +1,18 @@
+ /*
+   Copyright 2025 Kuan-Hsi(Vic) Chen, Jiin Lai
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
 //////////////////////////////////////////////////////////
 // Design: FIR engine
 // Author: Kuan-Hsi(Vic) Chen
@@ -6,6 +21,7 @@
 //         [2025/03/15]: Enable read tap when processing
 //         [2025/04/03]: Disable read tap when processing
 //         [2025/04/03]: Add Latch to decouple stream-in interface and data_RAM
+//         [2025/04/17]: Improve design to avoid deadlock if (load x-in; get y-out;) is blocking
 //////////////////////////////////////////////////////////
 `default_nettype wire
 
@@ -83,10 +99,10 @@ module fir
     assign awready = awready_q;
     assign wready  =  wready_q;
     assign rdata   =   rdata_q;
-    //////////
+
     assign ss_tready = ss_en & (~ff_valid); // if can receive stream data
     assign x_ready   = x_init & (~x_full) & (~ap_idle); // data_RAM is initialized & not full
-    //////////
+
     assign sm_tvalid = (y_done);
     assign sm_tdata  = y;
     assign sm_tlast  = (~ap_idle & sm_tvalid & (y_cnt == x_len-1)); // If the last Y is calculated
@@ -99,12 +115,12 @@ module fir
     assign x_init = (h_cnfg & (init_addr[(pADDR_WIDTH-1):2] == h_len)); // data RAM initialize
     assign y_done = pipeline_y[0];       // y_done: finish current y's convolution
     assign read_h = arvalid & araddr[7]; // read tap RAM
-    assign fir_en = (x_init & x_cnfg & run & ((x_full | (ff_valid & x_ready)) | (y_cnt == x_len-1))); // for pipeline stage and address generator
+    assign fir_en = (x_init & x_cnfg & run & ((x_full | (ff_valid & x_ready)))); // for pipeline stage and address generator
     
     // Restart the accumulation of y when a new convolution start and flow through the pipeline stage 3 (accumulation)
     // pipeline_x[0] Means new FIR product(m) flow through this stage_Y (i == 3)
-    assign y_new = (sm_tvalid & ~sm_tready)? 0 : ((~run_q & run) || pipeline_x[0])? m   : m;
-    assign y_old = (sm_tvalid & ~sm_tready)? y : ((~run_q & run) || pipeline_x[0])? m_l : y;
+    assign y_new = (sm_tvalid & ~sm_tready)? 0 : m;
+    assign y_old = (sm_tvalid & ~sm_tready)? y : (pipeline_x[0])? 0 : ((~run_q & run))? m_l : y;
 
     assign tap_EN = (awaddr[7] | araddr[7] | ~ap_idle);  // check if address start from 0x80
     assign tap_WE = {4{(wvalid & awvalid & awaddr[7])}}; // expand to 4'b1111
@@ -176,13 +192,12 @@ module fir
             x_l <= 0;
             h_l <= 0;
             m_l <= 0;
-        end else begin // if AXI read request(arvalid), latch the current output from RAMs | if sm_tvalid but slave can't take it, capture the current data(x), coefficient(h), product(m)
+        end else begin // if sm_tvalid but slave can't take it, capture the current data(x), coefficient(h), product(m)
             x_l <= (fir_en_q & ~fir_en)? data_Do : (sm_tvalid & ~sm_tready & fir_en)? x : x_l;
             h_l <= (fir_en_q & ~fir_en)?  tap_Do : (sm_tvalid & ~sm_tready & fir_en)? h : h_l;
             m_l <= (sm_tvalid & ~sm_tready & fir_en)? m : (sm_tvalid_q & ~sm_tvalid)? 0 : m_l;
         end                                              // Means the current Y is finished, clear the accumulation
     end
-
 
     // Check if the data_RAM is updated: x_cnt == h_len?
     always @(posedge axis_clk or negedge axis_rst_n) begin
@@ -269,7 +284,7 @@ module fir
             i <= {(pADDR_WIDTH-1){1'b0}};
             t <= {(pADDR_WIDTH-1){1'b0}};
         end else begin // if 1. Y-out is valid but not taken 2. DATA_RAM need update => stall
-            if (fir_en | (sm_tvalid & sm_tready)) begin // address update is permitted if arready assert in the next cycle when arvalid came
+            if (fir_en | (sm_tvalid & sm_tready & x_full)) begin // address update is permitted if current Y_out is taken
                 i <= ((sm_tvalid & ~sm_tready))? i : (i != (h_len - 1))? i + 1 : 0;
                 t <= ((sm_tvalid & ~sm_tready))? t : (i == (h_len - 1))? ((t != h_len - 1)? t + 1 : 0) : t;
             end else if (ap_done) begin // Reset convolution address when ap_done
@@ -286,9 +301,9 @@ module fir
             h <= 0;
             m <= 0;
             y <= 0;
-        end else if (fir_en) begin // Enable shifting when "fir_en" | "(run & ~fir_en_q & fir_en)": arvalid/sm_tvalid gone=> use the latched data
-            x <= (run & ~fir_en_q & fir_en)? x_l : (x_full & ~x_full_q)? data_ff : data_Do; // RAM can't be read & write at the same time, so use the latched data when x stored into RAM (i==1)
-            h <= (run & ~fir_en_q & fir_en)? h_l : tap_Do; // If AXI-lite read transaction done, resume with the latched data
+        end else if (fir_en | (|pipeline_y[3:1])) begin // Enable shifting when "fir_en" | "(run & ~fir_en_q & fir_en)": sm_tvalid gone=> use the latched data
+            x <= (run & run_q & ~fir_en_q & fir_en)? x_l : (x_full & ~x_full_q)? data_ff : data_Do; // RAM can't be read & write at the same time, so use the latched data when x stored into RAM (i==1)
+            h <= (run & run_q & ~fir_en_q & fir_en)? h_l : tap_Do;
             m <= x * h;
             y <= y_new + y_old;  
         end
@@ -301,7 +316,9 @@ module fir
             {pipeline_x} <= 0;
         end else if ((fir_en | sm_tvalid)) begin // stall if Y-out have not been taken
             {pipeline_y} <= (sm_tvalid)? (sm_tready)? {x_last, pipeline_y[3:1]} : {pipeline_y}: {x_last, pipeline_y[3:1]}; // To know whether last X is finished => Y (stage 4)
-            {pipeline_x} <= {x_strt, pipeline_x[2:1]}; // To know whether 1st X flow through accumulation stage (stage 3)
+            {pipeline_x} <= (sm_tvalid & ~sm_tready)? {pipeline_x} : {x_strt, pipeline_x[2:1]}; // To know whether 1st X flow through accumulation stage (stage 3)
+        end else if (|pipeline_y[3:1]) begin
+            {pipeline_y} <= {x_last, pipeline_y[3:1]};
         end
     end
 

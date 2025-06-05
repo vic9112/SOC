@@ -1,17 +1,8 @@
-// SPDX-FileCopyrightText: 2020 Efabless Corporation
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-// SPDX-License-Identifier: Apache-2.0
+//////////////////////////////////////////////////////////
+// Design: Lab4-2 Testbench
+// Author: Kuan-Hsi(Vic) Chen
+// Email : s179038@gmail.com
+//////////////////////////////////////////////////////////
 
 `default_nettype wire
 
@@ -159,29 +150,101 @@ module counter_la_fir_tb;
 	integer cycs = 0;
 	integer sum  = 0;
 	initial begin
-
 		for (n = 0; n < 3; n = n + 1) begin
 			cycs = 0;
 			wait(checkbits == 16'h00A5);
+			
+			$display("=============================================");
 			$display("----> Start FIR Test %d", n+1);
-			$display("Start latency-timer...");
+			$display("----> Start latency-timer...");
 			
 			
 			while(checkbits[7:0] != 8'h5A) @(posedge clock)	cycs = cycs + 1;
 			
-
-			$display("Final Y = %d", checkbits[15:8]);
-
-			$display("Finish processing...");
+			//$display("Final Y = %d", checkbits[15:8]);
 			$display("Executes in %d cycles", cycs);
-			$display("-----------------------------------");
 			sum = sum + cycs;
 		end
-		
+
+		$display("=============================================");
 		$display("Total cycles: %d", sum);
 		
 		#10000;
 		$finish;
+	end
+
+	reg signed [31:0] golden_list11[0:63];
+	reg signed [31:0] golden_list12[0:63];
+	reg signed [31:0] golden_list15[0:63];
+	reg signed [31:0] golden_list32[0:63];
+	integer golden11, golden_data11;
+	integer golden12, golden_data12;
+	integer golden15, golden_data15;
+	integer golden32, golden_data32;
+	reg err;
+	integer m;
+	initial begin
+        golden11 = $fopen("./testpattern/y11.dat","r");
+        golden12 = $fopen("./testpattern/y12.dat","r");
+        golden15 = $fopen("./testpattern/y15.dat","r");
+        golden32 = $fopen("./testpattern/y32.dat","r");
+
+        for(m = 0;m < 64 ;m = m + 1) begin
+			golden_data11 = $fscanf(golden11,"%d", golden_list11[m]);
+			golden_data12 = $fscanf(golden12,"%d", golden_list12[m]);
+			golden_data15 = $fscanf(golden15,"%d", golden_list15[m]);
+            golden_data32 = $fscanf(golden32,"%d", golden_list32[m]);
+        end
+    end
+
+	integer t, l, k; // t : cycle
+	reg [31:0] data_length, tap_length;
+	reg signed [31:0] golden;
+	// For throughput
+	initial begin
+		err = 0;
+		wait(RSTB == 0);
+        wait(RSTB == 1);
+
+		for (l = 0; l < 3; l = l + 1) begin
+			t = 0;
+			while (!(uut.mprj.fir_hardware.ap_start)) @(posedge clock);
+			
+			data_length = uut.mprj.fir_hardware.x_len;
+			tap_length  = uut.mprj.fir_hardware.h_len;
+
+			fork 
+                begin
+					while (!(uut.mprj.fir_hardware.sm_tvalid & uut.mprj.fir_hardware.sm_tready)) @(posedge clock);
+					@(posedge clock);
+					while (!(uut.mprj.fir_hardware.sm_tvalid & uut.mprj.fir_hardware.sm_tready)) @(posedge clock);
+					@(posedge clock);
+                    // Start from the second sm_tvalid & sm_tready considering CPU cache issue
+					while (!(uut.mprj.fir_hardware.sm_tvalid & uut.mprj.fir_hardware.sm_tready & uut.mprj.fir_hardware.sm_tlast)) @(posedge clock) t = t + 1;
+                end
+                begin        
+					for (k = 0; k < data_length-2; k = k + 1) begin
+						while (!(uut.mprj.fir_hardware.sm_tvalid & uut.mprj.fir_hardware.sm_tready)) @(posedge clock);
+						golden = (tap_length == 11)? golden_list11[k] : (tap_length == 12)? golden_list12[k] : (tap_length == 15)? golden_list15[k] : golden_list32[k];
+						if (uut.mprj.fir_hardware.sm_tdata != golden) begin
+            		    	$display("[ERROR] [Pattern %d] Golden answer: %d, Your answer: %d", k, golden, uut.mprj.fir_hardware.sm_tdata);
+            		    	err <= 1;
+            			end
+						@(posedge clock);
+					end             
+                end
+            join 
+
+			$display("---------------------------------------------");
+			$display("coef_len: %d", tap_length);
+			$display("data_len: %d", data_length);
+			$display("Data Rate: %.2f T / per Y", t * 1.0 / ((data_length-2) * 1.0));
+			$display("---------------------------------------------");
+			if (err == 0) $display("----- Congratulations! Simulation Pass! -----");
+			else          $display("------------ Simulation Failed! -------------");
+			$display("---------------------------------------------");
+			
+		end
 	end
 
 	initial begin
@@ -207,38 +270,12 @@ module counter_la_fir_tb;
 	wire flash_io0;
 	wire flash_io1;
 
-	wire VDD1V8;
-	wire VDD3V3;
-	wire VSS;
-    
-	assign VDD3V3 = power1;
-	assign VDD1V8 = power2;
-	assign VSS = 1'b0;
 
 	assign mprj_io[3] = 1;  // Force CSB high.
 	assign mprj_io[0] = 0;  // Disable debug mode
 
 	caravel uut (
-/*
-		.vddio	  (VDD3V3),
-		.vddio_2  (VDD3V3),
-		.vssio	  (VSS),
-		.vssio_2  (VSS),
-		.vdda	  (VDD3V3),
-		.vssa	  (VSS),
-		.vccd	  (VDD1V8),
-		.vssd	  (VSS),
-		.vdda1    (VDD3V3),
-		.vdda1_2  (VDD3V3),
-		.vdda2    (VDD3V3),
-		.vssa1	  (VSS),
-		.vssa1_2  (VSS),
-		.vssa2	  (VSS),
-		.vccd1	  (VDD1V8),
-		.vccd2	  (VDD1V8),
-		.vssd1	  (VSS),
-		.vssd2	  (VSS),
-*/
+
 		.clock    (clock),
 		.gpio     (gpio),
 		.mprj_io  (mprj_io),
@@ -251,16 +288,12 @@ module counter_la_fir_tb;
 
 	spiflash #(
 		//.FILENAME("counter_la_fir.hex")
-		//.FILENAME("test.hexx")		// O2 with reorder addi
-		//.FILENAME("test2.hexx")		// O1 with reorder addi
-		//.FILENAME("test3.hexx")		// O1 with reorder sw
-		//.FILENAME("test4.hexx")		// O2 with sw sw addi addi lw
-		//.FILENAME("test5.hexx")		// O2 with lw sw sw addi addi
-		//.FILENAME("test6.hexx")		// O2 with prefetch Y
-		//.FILENAME("test7.hexx")		// O3 with prefetch Y
-		//.FILENAME("test8.hexx")		// O3 with xxy
-		.FILENAME("optimized.hex")
-		//.FILENAME("test_unfold.hexx")
+		//.FILENAME("originalfir.hex") // Original Caravel-FIR wihout any optimization with CPU
+		//.FILENAME("inst_cached.hex") // Shorten the assembly code: O3
+		//.FILENAME("optimized11.hex")
+		.FILENAME("optimized12.hex")
+		//.FILENAME("optimized15.hex")
+		//.FILENAME("optimized32.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),
